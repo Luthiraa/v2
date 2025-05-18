@@ -22,5 +22,63 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-geist-sans);
+}
+
+/* Add pulsating animation */
+@keyframes pulsate {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulsate {
+  animation: pulsate 1.5s ease-in-out infinite;
+}
+
+/* Disable body scrolling when viewer is open */
+.no-scroll {
+  overflow: hidden;
+}
+
+/* Add orange glow on hover */
+.group:hover > .hover-orange-glow {
+  box-shadow: 0 0 40px 10px rgba(255, 165, 0, 0.5);
+}
+
+/* Add transition for box-shadow */
+.hover-orange-glow {
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Frosted glass effect */
+.frosted-glass {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
 }

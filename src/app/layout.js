@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favico.ico" />
+        <link rel="icon" href="/favico.png" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

@@ -162,7 +162,7 @@ export default function Home() {
               {/* Right column: descriptions */}
               <div className="flex flex-col gap-8">
                 <Fade triggerOnce>
-                  <div className="text-gray-200">Building the backend data infrastructure for Dash Web — integrating Instagram, Facebook, and a custom content library into a unified, scalable system. </div>
+                  <div className="text-gray-200">Data Foundation team,maintaining scalable data infrastructure, pipelines, and workflows for big data processing.</div>
                 </Fade>
                 <Fade triggerOnce delay={100}>
                   <div className="text-gray-200">Developed forecasting models for solar and wind energy generation using Transformer architecture, and built API-driven data pipelines to support a deep reinforcement learning agent.</div>

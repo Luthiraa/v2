@@ -98,7 +98,7 @@ export default function Home() {
                     <img src="/images/dash.png" alt="DH" className="w-12 h-12 rounded-md bg-[#18181b] object-contain" />
                     <div>
                       <div className="font-semibold text-lg">Dash Social</div>
-                      <a href="https://dashsocial.com/" className="text-purple-400 font-medium hover:underline">Software Engineering Intern</a>
+                      <a href="https://dashsocial.com/" className="text-purple-400 font-medium hover:underline">Software Engineer Intern</a>
                       <div className="text-sm text-gray-400">May 2025 - August 2025</div>
                     </div>
                   </div>
@@ -168,7 +168,7 @@ export default function Home() {
                   <div className="text-gray-200">Developed forecasting models for solar and wind energy generation using Transformer architecture, and built API-driven data pipelines to support a deep reinforcement learning agent.</div>
                 </Fade>
                 <Fade triggerOnce delay={200}>
-                  <div className="text-gray-200">Primary workstudy cohort core memebr for self driving labs (training labs) of the Global Materials Discovery Lab team, building smart data pipelines to automate temperature control in next-gen material experiments</div>
+                  <div className="text-gray-200">Pioneer workstudy SDL training labs team for Global Materials Discovery Lab team, building smart data pipelines to automate temperature control in next-gen material experiments</div>
                 </Fade>
                 <Fade triggerOnce delay={300}>
                   <div className="text-gray-200">Core ERP software infrastructure team, autonomous OCR reciept proceeing and inventory management.</div>

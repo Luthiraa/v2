@@ -5,6 +5,92 @@ import { useState, useEffect } from "react";
 
 const galleryImages = [
   {
+    src: "/images/gallery/sf3.jpg",
+    location: "San Francisco - Bay Area, USA", 
+    date: "July 08, 2025", 
+  }, 
+  {
+    src: "/images/gallery/pelican.jpg",
+    location: "San Francisco - Fisherman's Wharf, USA", 
+    date: "July 08, 2025", 
+  }, 
+    {
+    src: "/images/gallery/wharf.jpg",
+    location: "San Francisco - Fisherman's Wharf, USA", 
+    date: "July 08, 2025", 
+  }, 
+  {
+    src: "/images/gallery/sealion.jpg",
+    location: "San Francisco - Fisherman's Wharf, USA", 
+    date: "July 08, 2025", 
+  }, 
+  {
+    src: "/images/gallery/alcatraz.jpg",
+    location: "San Francisco - Bay Area, USA", 
+    date: "July 07, 2025", 
+  }, 
+    {
+    src: "/images/gallery/sunnyalcatraz.jpg",
+    location: "San Francisco - Bay Area, USA", 
+    date: "July 07, 2025", 
+  },   
+  {
+    src: "/images/gallery/sf1.jpg",
+    location: "San Francisco, California", 
+    date: "July 07, 2025", 
+  }, 
+    {
+    src: "/images/gallery/sf2.jpg",
+    location: "San Francisco, California", 
+    date: "July 07, 2025", 
+  }, 
+      {
+    src: "/images/gallery/sfpark.jpg",
+    location: "San Francisco, California", 
+    date: "July 07, 2025", 
+  }, 
+  {
+    src: "/images/gallery/sfbay.jpg",
+    location: "San Francisco, California", 
+    date: "July 07, 2025", 
+  }, 
+  {
+    src: "/images/gallery/hawk.jpg",
+    location: "Calgary - Alberta, Canada", 
+    date: "July 07, 2025", 
+  }, 
+
+  {
+    src: "/images/gallery/airplane.jpg",
+    location: "Somewhere near the pacific", 
+    date: "July 07, 2025", 
+  },
+  {
+    src: "/images/gallery/caldt.jpg",
+    location: "Calgary - Alberta, Canada", 
+    date: "July 06, 2025", 
+  }, 
+    {
+    src: "/images/gallery/peacebridge.jpg",
+    location: "Calgary - Alberta, Canada", 
+    date: "July 06, 2025", 
+  }, 
+    {
+    src: "/images/gallery/skylinecal.jpg",
+    location: "Calgary - Alberta, Canada", 
+    date: "July 06, 2025", 
+  },
+      {
+    src: "/images/gallery/tower.jpg",
+    location: "Calgary - Alberta, Canada", 
+    date: "July 06, 2025", 
+  },
+      {
+    src: "/images/gallery/skylinecal2.jpg",
+    location: "Calgary - Alberta, Canada", 
+    date: "July 06, 2025", 
+  },
+  {
     src: "/images/gallery/london.jpg",
     location: "London, England",
     date: "August 31, 2024",

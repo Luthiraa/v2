@@ -10,8 +10,13 @@ const socialLinks = [
   { href: "https://www.linkedin.com/in/luthiraa/", label: "LinkedIn", icon: (
     <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 8a6 6 0 0 1 6 6v6M2 8v6a6 6 0 0 0 6 6h6"/><circle cx="8" cy="8" r="1"/><rect x="7" y="11" width="2" height="6"/></svg>
   ) },
-  { href: "luthira.abeykoon@mail.utoronto.ca", label: "Email", icon: (
+  { href: "mailto:luthira.abeykoon@mail.utoronto.ca", label: "Email", icon: (
     <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
+  ) },
+  { href: "https://x.com/", label: "X", icon: (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-label="X">
+      <path d="M18.244 2H21.5l-7.59 8.65L22 22h-6.83l-5.3-6.85L3.6 22H0l8.06-9.18L0 2h6.99l4.78 6.2L18.244 2z"/>
+    </svg>
   ) },
 ];
 

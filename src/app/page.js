@@ -65,7 +65,7 @@ export default function Home() {
         </Fade>
         {/* Subtitle */}
         <Fade triggerOnce delay={400}>
-          <p className="text-base text-gray-300 mb-2 max-w-xl">Engineer building at the intersection of embedded software and machine learning. Currently stuying Electrical Engineering at the University of Toronto. Seeking summer 2026 internships/PEY.</p>
+          <p className="text-base text-gray-300 mb-2 max-w-xl">Creative engineer who likes building cool things, from electronics to software, and mixing tech with creativity to make ideas happen. Currently studying Electrical Engineering at the University of Toronto and looking for Summer 2026 internships and PEY opportunities.</p>
         </Fade>
         {/* More About Me Button */}
         <Fade triggerOnce delay={600}>

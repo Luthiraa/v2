@@ -13,7 +13,7 @@ const socialLinks = [
   { href: "mailto:luthira.abeykoon@mail.utoronto.ca", label: "Email", icon: (
     <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
   ) },
-  { href: "https://x.com/", label: "X", icon: (
+  { href: "https://x.com/luthiraabeykoon", label: "X", icon: (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-label="X">
       <path d="M18.244 2H21.5l-7.59 8.65L22 22h-6.83l-5.3-6.85L3.6 22H0l8.06-9.18L0 2h6.99l4.78 6.2L18.244 2z"/>
     </svg>
@@ -65,16 +65,14 @@ export default function Home() {
         </Fade>
         {/* Subtitle */}
         <Fade triggerOnce delay={400}>
-          <p className="text-base text-gray-300 mb-2 max-w-xl"> I Like making cool stuff, sometimes it’s electronics, sometimes it’s software, usually a mix of both. Into blending tech with creativity and seeing where it goes. Currently studying Electrical Engineering at the University of Toronto.</p>
+          <p className="text-base text-gray-300 mb-2 max-w-xl"> I like making cool stuff, sometimes it’s electronics, sometimes it’s software, usually a mix of both. Into blending tech with creativity and seeing where it goes. Currently studying Electrical Engineering at the University of Toronto.</p>
         </Fade>
-        {/* More About Me Button */}
         <Fade triggerOnce delay={600}>
           <a href="#work" className="mt-6 mb-10 inline-flex items-center px-7 py-3 border border-white rounded-md font-bold text-white hover:bg-white hover:text-black transition duration-300 text-base bg-white/10 backdrop-blur-sm">
             <span className="w-2 h-2 rounded-full bg-white mr-2 inline-block"></span>
             More About Me
           </a>
         </Fade>
-        {/* Social Icons */}
         <Fade triggerOnce delay={800}>
           <div className="flex gap-8 mt-2">
             {socialLinks.map((link, i) => (
@@ -218,12 +216,12 @@ export default function Home() {
               </Fade>
               <Fade triggerOnce delay={100}>
                 <div className="flex flex-col gap-4 group hover-orange-glow transition">
-                  <a href="https://github.com/Luthiraa/RLC.dev" className="block bg-[#18181b] rounded-lg overflow-hidden shadow transition-transform transform hover:-translate-y-1 hover:-shadow-lg hover:bg-[#2a2a2a] duration-300">
-                    <img src="/images/rlc.png" alt="Politicate" className="w-full object-cover aspect-video" />
+                  <a href="/projects/deepmetal" className="block bg-[#18181b] rounded-lg overflow-hidden shadow transition-transform transform hover:-translate-y-1 hover:-shadow-lg hover:bg-[#2a2a2a] duration-300">
+                    <img src="/images/deepmetal.png" alt="DeepMetal" className="w-full object-cover aspect-video" />
                   </a>
                   <div className="p-2">
-                    <div className="font-semibold text-lg">RLC.dev</div>
-                    <div className="text-gray-400 text-sm">Master Electrical Engineering with leetcode style questions</div>
+                    <div className="font-semibold text-lg">DeepMetal</div>
+                    <div className="text-gray-400 text-sm">Compiler for high-level ML libraries to run your models on edge.</div>
                   </div>
                 </div>
               </Fade>

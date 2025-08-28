@@ -55,7 +55,7 @@ export default function Home() {
           <div className="mb-8">
             <span className="inline-flex items-center px-5 py-2 rounded-md bg-[#232323]/60 backdrop-blur-sm text-base font-semibold">
               <span className="w-2 h-2 rounded-full bg-purple-500 mr-2 inline-block animate-pulsate"></span>
-              Building at <a href="#" className="underline font-bold ml-1">Dash Social</a>
+              Building <a href="#" className="underline font-bold ml-1">HackerFab</a>
             </span>
           </div>
         </Fade>

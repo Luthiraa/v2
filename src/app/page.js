@@ -199,6 +199,23 @@ export default function Home() {
               {/* Example Project Card */}
               <Fade triggerOnce>
                 <div className="flex flex-col gap-4 group hover-orange-glow transition">
+                  <a href="https://uofthackerfab.vercel.app/" className="block bg-[#18181b] rounded-xl overflow-hidden shadow-xl transition-transform transform hover:-translate-y-1 hover:-shadow-2xl hover:bg-[#2a2a2a] duration-300">
+                    <img
+                      src="/images/hackerfab.gif"
+                      alt="Maestro"
+                      className="w-full object-cover aspect-video"
+                      width={1500}
+                      height={1000}
+                    />
+                  </a>
+                  <div className="p-2">
+                    <div className="font-semibold text-xl mb-2">Hackerfab</div>
+                    <div className="text-gray-400 text-base">Making chips and transistors from the ground up.</div>
+                  </div>
+                </div>
+              </Fade>
+              <Fade triggerOnce>
+                <div className="flex flex-col gap-4 group hover-orange-glow transition">
                   <a href="https://github.com/kennykguo/autogrid-ai" className="block bg-[#18181b] rounded-xl overflow-hidden shadow-xl transition-transform transform hover:-translate-y-1 hover:-shadow-2xl hover:bg-[#2a2a2a] duration-300">
                     <img
                       src="/images/dashboard.png"
@@ -244,6 +261,17 @@ export default function Home() {
                   <div className="p-2">
                     <div className="font-semibold text-lg">A.I.M.</div>
                     <div className="text-gray-400 text-sm">Artificially Intelligent Maps (w/ LLM powered Agentic Assistant)</div>
+                  </div>
+                </div>
+              </Fade>
+                <Fade triggerOnce delay={300}>
+                <div className="flex flex-col gap-4 group hover-orange-glow transition">
+                  <a href="https://github.com/Luthiraa/neuro-lab-scripts" className="block bg-[#18181b] rounded-lg overflow-hidden shadow transition-transform transform hover:-translate-y-1 hover:-shadow-lg hover:bg-[#2a2a2a] duration-300">
+                    <img src="/images/sfap.gif" alt="sfap" className="w-full object-cover aspect-video" />
+                  </a> 
+                  <div className="p-2">
+                    <div className="font-semibold text-lg">Neural Signal Propagation Simulations</div>
+                    <div className="text-gray-400 text-sm">Single fiber action potential in the saphenous nerve.</div>
                   </div>
                 </div>
               </Fade>

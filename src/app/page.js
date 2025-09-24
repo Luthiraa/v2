@@ -101,7 +101,7 @@ export default function Home() {
                     <img src="/images/arise2.png" alt="ARISE" className="w-12 h-12 rounded-md bg-[#18181b] object-contain" />
                     <div>
                       <div className="font-semibold text-lg">ARISE</div>
-                      <a href="https://arisesim.com/" className="text-purple-400 font-medium hover:underline">Engineering & Growth</a>
+                      <a href="https://arisesim.com/" className="text-purple-400 font-medium hover:underline">Engineering & Operations</a>
                       <div className="text-sm text-gray-400">Present</div>
                     </div>
                   </div>

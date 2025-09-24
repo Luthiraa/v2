@@ -4,6 +4,21 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 
 const galleryImages = [
+      {
+    src: "/images/gallery/lionsgate.jpg",
+    location: "Vancouver - Lion's Gate, Canada", 
+    date: "July 10, 2025", 
+  }, 
+    {
+    src: "/images/gallery/ferns.jpg",
+    location: "Vancouver - Battery Park, Canada", 
+    date: "July 10, 2025", 
+  }, 
+  {
+    src: "/images/gallery/van1.jpg",
+    location: "Vancouver - Battery Park, Canada", 
+    date: "July 10, 2025", 
+  }, 
   {
     src: "/images/gallery/sf3.jpg",
     location: "San Francisco - Bay Area, USA", 

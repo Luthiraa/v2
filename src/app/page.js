@@ -55,7 +55,7 @@ export default function Home() {
           <div className="mb-8">
             <span className="inline-flex items-center px-5 py-2 rounded-md bg-[#232323]/60 backdrop-blur-sm text-base font-semibold">
               <span className="w-2 h-2 rounded-full bg-purple-500 mr-2 inline-block animate-pulsate"></span>
-              Building <a href="#" className="underline font-bold ml-1">HackerFab</a>
+              Building <a href="#" className="underline font-bold ml-1">ARISE</a>
             </span>
           </div>
         </Fade>
@@ -96,8 +96,18 @@ export default function Home() {
               <div className="flex flex-col gap-8">
     
                 {/* Work Item */}
+                  <Fade triggerOnce>
+                  <div className="flex gap-4 items-start group hover-orange-glow transition h-[72px]">
+                    <img src="/images/arise2.png" alt="ARISE" className="w-12 h-12 rounded-md bg-[#18181b] object-contain" />
+                    <div>
+                      <div className="font-semibold text-lg">ARISE</div>
+                      <a href="https://arisesim.com/" className="text-purple-400 font-medium hover:underline">Engineering & Growth</a>
+                      <div className="text-sm text-gray-400">Present</div>
+                    </div>
+                  </div>
+                </Fade>
                 <Fade triggerOnce>
-                  <div className="flex gap-4 items-start group hover-orange-glow transition">
+                  <div className="flex gap-4 items-start group hover-orange-glow transition h-[72px]">
                     <img src="/images/dash.png" alt="DH" className="w-12 h-12 rounded-md bg-[#18181b] object-contain" />
                     <div>
                       <div className="font-semibold text-lg">Dash Social</div>
@@ -108,7 +118,7 @@ export default function Home() {
                 </Fade>
                 {/* Work Item */}
                 <Fade triggerOnce delay={100}>
-                  <div className="flex gap-4 items-start group hover-orange-glow transition">
+                  <div className="flex gap-4 items-start group hover-orange-glow transition h-[72px]">
                     <img src="/images/borealis.jpg" alt="Borealis" className="w-12 h-12 rounded-md bg-[#18181b] object-contain" />
                     <div>
                       <div className="font-semibold text-lg">RBC Borealis</div>
@@ -119,7 +129,7 @@ export default function Home() {
                 </Fade>
                 {/* Work Item */}
                 <Fade triggerOnce delay={200}>
-                  <div className="flex gap-4 items-start group hover-orange-glow transition">
+                  <div className="flex gap-4 items-start group hover-orange-glow transition h-[72px]">
                     <img src="/images/ac.jpg" alt="AC" className="w-12 h-12 rounded-md bg-[#18181b] object-contain" />
                     <div>
                       <div className="font-semibold text-lg">Acceleration Consortium</div>
@@ -130,7 +140,7 @@ export default function Home() {
                 </Fade>
                 {/* Work Item */}
                 <Fade triggerOnce delay={300}>
-                  <div className="flex gap-4 items-start group hover-orange-glow transition">
+                  <div className="flex gap-4 items-start group hover-orange-glow transition h-[72px]">
                     <img src="/images/teknion.jpg" alt="Teknion" className="w-12 h-12 rounded-md bg-[#18181b] object-contain" />
                     <div>
                       <div className="font-semibold text-lg">Teknion</div>
@@ -141,7 +151,7 @@ export default function Home() {
                 </Fade>
                 {/* Work Item */}
                 <Fade triggerOnce delay={400}>
-                  <div className="flex gap-4 items-start group hover-orange-glow transition">
+                  <div className="flex gap-4 items-start group hover-orange-glow transition h-[72px]">
                     <img src="/images/bme.jpg" alt="WAT.ai" className="w-12 h-12 rounded-md bg-[#18181b] object-contain" />
                     <div>
                       <div className="font-semibold text-lg">Institute of Biomedical Engineering</div>
@@ -152,7 +162,7 @@ export default function Home() {
                 </Fade>
                 {/* Work Item */}
                 <Fade triggerOnce delay={500}>
-                  <div className="flex gap-4 items-start group hover-orange-glow transition">
+                  <div className="flex gap-4 items-start group hover-orange-glow transition h-[72px]">
                     <img src="/images/ontario.png" alt="D&D Skunkworks" className="w-12 h-12 rounded-md bg-[#18181b] object-contain" />
                     <div>
                       <div className="font-semibold text-lg">Government of Ontario</div>
@@ -165,22 +175,25 @@ export default function Home() {
               {/* Right column: descriptions */}
               <div className="flex flex-col gap-8">
                 <Fade triggerOnce>
-                  <div className="text-gray-200">Data Foundation team,maintaining scalable data infrastructure, pipelines, and workflows for big data processing.</div>
+                  <div className="text-gray-200 h-[72px] flex items-start">Building the all in one robotics education platform from CAD to code to augmented reality. Backed by North Forge, and a16z.</div>
+                </Fade>
+                <Fade triggerOnce>
+                  <div className="text-gray-200 h-[72px] flex items-start">Data Foundation team,maintaining scalable data infrastructure, pipelines, and workflows for big data processing.</div>
                 </Fade>
                 <Fade triggerOnce delay={100}>
-                  <div className="text-gray-200">Developed forecasting models for solar and wind energy generation using Transformer architecture, and built API-driven data pipelines to support a deep reinforcement learning agent.</div>
+                  <div className="text-gray-200 h-[72px] flex items-start">Developed forecasting models for solar and wind energy generation using Transformer architecture, and built API-driven data pipelines to support a deep reinforcement learning agent. </div>
                 </Fade>
                 <Fade triggerOnce delay={200}>
-                  <div className="text-gray-200">Pioneer workstudy SDL training labs team for Global Materials Discovery Lab team, building smart data pipelines to automate temperature control in next-gen material experiments</div>
+                  <div className="text-gray-200 h-[72px] flex items-start">Pioneer workstudy SDL training labs team for Global Materials Discovery Lab team, building smart data pipelines to automate temperature control in next-gen material experiments</div>
                 </Fade>
                 <Fade triggerOnce delay={300}>
-                  <div className="text-gray-200">Core ERP software infrastructure team, autonomous OCR reciept proceeing and inventory management.</div>
+                  <div className="text-gray-200 h-[72px] flex items-start">Core ERP software infrastructure team, autonomous OCR reciept proceeing and inventory management.</div>
                 </Fade>
                 <Fade triggerOnce delay={400}>
-                  <div className="text-gray-200">Simulations and data analytics for single-fiber action potential nerve propagation through non-invasive saphenous nerve stimulation for overactive bladder treatment. </div>
+                  <div className="text-gray-200 h-[72px] flex items-start">Simulations and data analytics for single-fiber action potential nerve propagation through non-invasive saphenous nerve stimulation for overactive bladder treatment. </div>
                 </Fade>
                 <Fade triggerOnce delay={500}>
-                  <div className="text-gray-200">Built OCR data pipelines automating manual data entry for 100,000+ land registry pins. (LRO #66)</div>
+                  <div className="text-gray-200 h-[72px] flex items-start">Built OCR data pipelines automating manual data entry for 100,000+ land registry pins. (LRO #66)</div>
                 </Fade>
               </div>
             </div>
@@ -197,6 +210,23 @@ export default function Home() {
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {/* Example Project Card */}
+                      <Fade triggerOnce>
+                <div className="flex flex-col gap-4 group hover-orange-glow transition">
+                  <a href="https://deepudocs.vercel.app/" className="block bg-[#18181b] rounded-xl overflow-hidden shadow-xl transition-transform transform hover:-translate-y-1 hover:-shadow-2xl hover:bg-[#2a2a2a] duration-300">
+                    <img
+                      src="/images/talos.gif"
+                      alt="Maestro"
+                      className="w-full object-cover aspect-video"
+                      width={1500}
+                      height={1000}
+                    />
+                  </a>
+                  <div className="p-2">
+                    <div className="font-semibold text-xl mb-2">Talos - Tensor Accelerated Logic for On-Chip Systems</div>
+                    <div className="text-gray-400 text-base">Hardware accelerator for convolutional neural networks that runs both training and inference on chip.</div>
+                  </div>
+                </div>
+              </Fade>
               <Fade triggerOnce>
                 <div className="flex flex-col gap-4 group hover-orange-glow transition">
                   <a href="https://uofthackerfab.vercel.app/" className="block bg-[#18181b] rounded-xl overflow-hidden shadow-xl transition-transform transform hover:-translate-y-1 hover:-shadow-2xl hover:bg-[#2a2a2a] duration-300">
@@ -211,6 +241,23 @@ export default function Home() {
                   <div className="p-2">
                     <div className="font-semibold text-xl mb-2">Hackerfab</div>
                     <div className="text-gray-400 text-base">Making chips and transistors from the ground up.</div>
+                  </div>
+                </div>
+              </Fade>
+               <Fade triggerOnce>
+                <div className="flex flex-col gap-4 group hover-orange-glow transition">
+                  <a href="https://github.com/Luthiraa/CVChess" className="block bg-[#18181b] rounded-xl overflow-hidden shadow-xl transition-transform transform hover:-translate-y-1 hover:-shadow-2xl hover:bg-[#2a2a2a] duration-300">
+                    <img
+                      src="/images/cvchess.png"
+                      alt="Maestro"
+                      className="w-full object-cover aspect-video"
+                      width={1500}
+                      height={1000}
+                    />
+                  </a>
+                  <div className="p-2">
+                    <div className="font-semibold text-xl mb-2">CVChess</div>
+                    <div className="text-gray-400 text-base">End-to-end model for chess state to FEN, 4× more accurate than SOTA.</div>
                   </div>
                 </div>
               </Fade>
@@ -274,29 +321,7 @@ export default function Home() {
                     <div className="text-gray-400 text-sm">Single fiber action potential in the saphenous nerve.</div>
                   </div>
                 </div>
-              </Fade>
-              <Fade triggerOnce delay={400}>
-                <div className="flex flex-col gap-4 group hover-orange-glow transition">
-                  <a href="https://github.com/Luthiraa/Go-Fish" className="block bg-[#18181b] rounded-lg overflow-hidden shadow transition-transform transform hover:-translate-y-1 hover:-shadow-lg hover:bg-[#2a2a2a] duration-300">
-                    <img src="/images/gofish.png" alt="" className="w-full object-cover aspect-video"/>
-                  </a>
-                  <div className="p-2">
-                    <div className="font-semibold text-lg">Go Fish</div>
-                    <div className="text-gray-400 text-sm"> Internal semantic retrieval system using Transformer-based dense embeddings and RAG</div>
-                  </div>
-                </div>
-              </Fade>
-              <Fade triggerOnce delay={500}>
-                <div className="flex flex-col gap-4 group hover-orange-glow transition">
-                  <a href="https://github.com/Luthiraa/Weave" className="block bg-[#18181b] rounded-lg overflow-hidden shadow transition-transform transform hover:-translate-y-1 hover:-shadow-lg hover:bg-[#2a2a2a] duration-300">
-                    <img src="/images/weave.png" alt="Project LeBron" className="w-full object-cover aspect-video" />
-                  </a>
-                  <div className="p-2">
-                    <div className="font-semibold text-lg">Weave</div>
-                    <div className="text-gray-400 text-sm">  The app that remembers names so you don't have to — never say "who was that again?" ever again</div>
-                  </div>
-                </div>
-              </Fade>
+              </Fade>          
             </div>
           </div>
         </section>

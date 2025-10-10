@@ -101,7 +101,7 @@ export default function Home() {
                     <img src="/images/arise2.png" alt="ARISE" className="w-12 h-12 rounded-md bg-[#18181b] object-contain" />
                     <div>
                       <div className="font-semibold text-lg">ARISE</div>
-                      <a href="https://arisesim.com/" className="text-purple-400 font-medium hover:underline">Engineering & Operations</a>
+                      <a href="https://arisesim.com/" className="text-purple-400 font-medium hover:underline">Member of Technical Staff</a>
                       <div className="text-sm text-gray-400">Present</div>
                     </div>
                   </div>
@@ -175,7 +175,7 @@ export default function Home() {
               {/* Right column: descriptions */}
               <div className="flex flex-col gap-8">
                 <Fade triggerOnce>
-                  <div className="text-gray-200 h-[72px] flex items-start">Building the all in one robotics education platform from CAD to code to augmented reality. Backed by North Forge, and a16z.</div>
+                  <div className="text-gray-200 h-[72px] flex items-start">Building the all in one robotics education platform from CAD to code to augmented reality. Backed by North Forge, LAUNCH, and angels.</div>
                 </Fade>
                 <Fade triggerOnce>
                   <div className="text-gray-200 h-[72px] flex items-start">Data Foundation team,maintaining scalable data infrastructure, pipelines, and workflows for big data processing.</div>

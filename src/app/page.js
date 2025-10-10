@@ -122,7 +122,7 @@ export default function Home() {
                     <img src="/images/borealis.jpg" alt="Borealis" className="w-12 h-12 rounded-md bg-[#18181b] object-contain" />
                     <div>
                       <div className="font-semibold text-lg">RBC Borealis</div>
-                      <a href="https://rbcborealis.com/lets-solve-it/" className="text-purple-400 font-medium hover:underline">Student Researcher</a>
+                      <a href="https://rbcborealis.com/lets-solve-it/" className="text-purple-400 font-medium hover:underline">ML Undergraduate Researcher</a>
                       <div className="text-sm text-gray-400">March 2025 - May 2025</div>
                     </div>
                   </div>

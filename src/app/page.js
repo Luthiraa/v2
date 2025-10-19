@@ -133,7 +133,7 @@ export default function Home() {
                     <img src="/images/ac.jpg" alt="AC" className="w-12 h-12 rounded-md bg-[#18181b] object-contain" />
                     <div>
                       <div className="font-semibold text-lg">Acceleration Consortium</div>
-                      <a href="https://acceleration.utoronto.ca/" className="text-purple-400 font-medium hover:underline">Developer</a>
+                      <a href="https://acceleration.utoronto.ca/" className="text-purple-400 font-medium hover:underline">Engineering</a>
                       <div className="text-sm text-gray-400">September 2024 - April 2025</div>
                     </div>
                   </div>

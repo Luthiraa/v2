@@ -96,6 +96,16 @@ export default function Home() {
               <div className="flex flex-col gap-8">
     
                 {/* Work Item */}
+                 <Fade triggerOnce>
+                  <div className="flex gap-4 items-start group hover-orange-glow transition h-[72px]">
+                    <img src="/images/qualcomm.png" alt="Qualcomm" className="w-12 h-12 rounded-md bg-[#18181b] object-contain" />
+                    <div>
+                      <div className="font-semibold text-lg">Qualcomm</div>
+                      <a href="https://www.qualcomm.com/snapdragon/overview" className="text-purple-400 font-medium hover:underline">Embedded Software Engineer</a>
+                      <div className="text-sm text-gray-400">Incoming May 2026</div>
+                    </div>
+                  </div>
+                </Fade>
                   <Fade triggerOnce>
                   <div className="flex gap-4 items-start group hover-orange-glow transition h-[72px]">
                     <img src="/images/arise2.png" alt="ARISE" className="w-12 h-12 rounded-md bg-[#18181b] object-contain" />
@@ -174,6 +184,9 @@ export default function Home() {
               </div>
               {/* Right column: descriptions */}
               <div className="flex flex-col gap-8">
+                <Fade triggerOnce>
+                  <div className="text-gray-200 h-[72px] flex items-start">Snapdragon display firmware team.</div>
+                </Fade>
                 <Fade triggerOnce>
                   <div className="text-gray-200 h-[72px] flex items-start">Building the all in one robotics education platform from CAD to code to augmented reality. Backed by North Forge, LAUNCH, and angels.</div>
                 </Fade>

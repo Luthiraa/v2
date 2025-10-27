@@ -132,7 +132,7 @@ export default function Home() {
                     <img src="/images/borealis.jpg" alt="Borealis" className="w-12 h-12 rounded-md bg-[#18181b] object-contain" />
                     <div>
                       <div className="font-semibold text-lg">RBC Borealis</div>
-                      <a href="https://rbcborealis.com/lets-solve-it/" className="text-purple-400 font-medium hover:underline">ML Undergraduate Researcher</a>
+                      <a href="https://arxiv.org/abs/2509.03666" className="text-purple-400 font-medium hover:underline">ML Undergraduate Researcher</a>
                       <div className="text-sm text-gray-400">March 2025 - May 2025</div>
                     </div>
                   </div>
@@ -200,7 +200,7 @@ export default function Home() {
                   <div className="text-gray-200 h-[72px] flex items-start">Pioneer workstudy SDL training labs team for Global Materials Discovery Lab team, building smart data pipelines to automate temperature control in next-gen material experiments</div>
                 </Fade>
                 <Fade triggerOnce delay={300}>
-                  <div className="text-gray-200 h-[72px] flex items-start">Core ERP software infrastructure team, autonomous OCR reciept proceeing and inventory management.</div>
+                  <div className="text-gray-200 h-[72px] flex items-start">Core ERP software infrastructure team, autonomous OCR reciept processing and inventory management.</div>
                 </Fade>
                 <Fade triggerOnce delay={400}>
                   <div className="text-gray-200 h-[72px] flex items-start">Simulations and data analytics for single-fiber action potential nerve propagation through non-invasive saphenous nerve stimulation for overactive bladder treatment. </div>

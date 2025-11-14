@@ -112,7 +112,7 @@ export default function Home() {
                     <div>
                       <div className="font-semibold text-lg">ARISE</div>
                       <a href="https://arisesim.com/" className="text-purple-400 font-medium hover:underline">Member of Technical Staff</a>
-                      <div className="text-sm text-gray-400">Present</div>
+                      <div className="text-sm text-gray-400">Jul 2025 - Nov 2025</div>
                     </div>
                   </div>
                 </Fade>
@@ -132,7 +132,7 @@ export default function Home() {
                     <img src="/images/borealis.jpg" alt="Borealis" className="w-12 h-12 rounded-md bg-[#18181b] object-contain" />
                     <div>
                       <div className="font-semibold text-lg">RBC Borealis</div>
-                      <a href="https://arxiv.org/abs/2509.03666" className="text-purple-400 font-medium hover:underline">ML Undergraduate Researcher</a>
+                      <a href="https://arxiv.org/abs/2509.03666" className="text-purple-400 font-medium hover:underline">Applied ML Research</a>
                       <div className="text-sm text-gray-400">March 2025 - May 2025</div>
                     </div>
                   </div>
@@ -165,22 +165,12 @@ export default function Home() {
                     <img src="/images/bme.jpg" alt="WAT.ai" className="w-12 h-12 rounded-md bg-[#18181b] object-contain" />
                     <div>
                       <div className="font-semibold text-lg">Institute of Biomedical Engineering</div>
-                      <a href="https://ww1.ibbme-neurolab.com/?usid=19&utid=22069006427" className="text-purple-400 font-medium hover:underline">Undergraduate Researcher</a>
+                      <a href="https://ww1.ibbme-neurolab.com/?usid=19&utid=22069006427" className="text-purple-400 font-medium hover:underline">Research</a>
                       <div className="text-sm text-gray-400">May 2024 - August 2024</div>
                     </div>
                   </div>
                 </Fade>
                 {/* Work Item */}
-                <Fade triggerOnce delay={500}>
-                  <div className="flex gap-4 items-start group hover-orange-glow transition h-[72px]">
-                    <img src="/images/ontario.png" alt="D&D Skunkworks" className="w-12 h-12 rounded-md bg-[#18181b] object-contain" />
-                    <div>
-                      <div className="font-semibold text-lg">Government of Ontario</div>
-                      <a href="https://www.ontario.ca/page/land-registry-offices-lro" className="text-purple-400 font-medium hover:underline">IT & Automation Intern</a>
-                      <div className="text-sm text-gray-400">June 2023 - August 2023</div>
-                    </div>
-                  </div>
-                </Fade>
               </div>
               {/* Right column: descriptions */}
               <div className="flex flex-col gap-8">
@@ -204,9 +194,6 @@ export default function Home() {
                 </Fade>
                 <Fade triggerOnce delay={400}>
                   <div className="text-gray-200 h-[72px] flex items-start">Simulations and data analytics for single-fiber action potential nerve propagation through non-invasive saphenous nerve stimulation for overactive bladder treatment. </div>
-                </Fade>
-                <Fade triggerOnce delay={500}>
-                  <div className="text-gray-200 h-[72px] flex items-start">Built OCR data pipelines automating manual data entry for 100,000+ land registry pins. (LRO #66)</div>
                 </Fade>
               </div>
             </div>

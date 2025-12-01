@@ -1,16 +1,19 @@
-import { Geist, Geist_Mono } from "next/font/google";
-import { Analytics } from '@vercel/analytics/next';
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+// Fix for: TypeError: localStorage.getItem is not a function
+if (typeof global.localStorage !== 'undefined') {
+  try {
+    if (typeof global.localStorage.getItem !== 'function') {
+      // If localStorage is defined but broken (e.g. missing getItem), remove it
+      // so that checks for typeof localStorage === 'undefined' work correctly.
+      delete global.localStorage;
+    }
+  } catch (e) {
+    console.error('Error fixing global.localStorage:', e);
+  }
+}
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+
 
 export const metadata = {
   title: "Luthira Abeykoon",
@@ -23,11 +26,8 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" href="/favico.png" />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body>
         {children}
-        <Analytics />
       </body>
     </html>
   );

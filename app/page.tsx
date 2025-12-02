@@ -63,6 +63,10 @@ export default function Home() {
                     <p className="text-gray-500 text-[10px]">career mode lite (trying to deprecate)</p>
                 </div>
 
+                <div className="pt-8 pb-4">
+                    <p className="text-gray-600 italic text-[10px]">~imagination is limitless~</p>
+                </div>
+
             </footer>
         </main>
     );

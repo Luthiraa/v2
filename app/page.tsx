@@ -19,7 +19,7 @@ export default function Home() {
             <div>
                 <Link href="/gallery">
                     <button className="border border-white/80 px-4 py-1.5 hover:bg-white hover:text-black transition-all duration-300 ease-in-out text-xs">
-                        Accelerate the TFLOPs
+                        Accelerate TFLOPs
                     </button>
                 </Link>
             </div>

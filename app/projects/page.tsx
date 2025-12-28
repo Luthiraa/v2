@@ -2,6 +2,11 @@ import Link from "next/link";
 
 const projects = [
     {
+        title: "Julie",
+        description: "A zero-cost, open-source desktop AI assistant that understands your screen and responds in real time.",
+        href: "https://github.com/Luthiraa/julie?tab=readme-ov-file"
+    },
+    {
         title: "RLC Dev",
         description: "Leetcode for electrical engineers - democratizing the ee interview process, 3500 submissions in 2 weeks",
         href: "https://rlcdev.app/"

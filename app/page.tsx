@@ -108,7 +108,7 @@ export default function Home() {
                                     <path d="M35 35 C 30 25, 25 15, 25 2" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
                                     <path d="M25 2 L 22 8 M 25 2 L 28 8" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
-                                <p className="absolute right-[10px] top-[25px] text-gray-500 text-[10px] -mr-4 whitespace-nowrap">(trying to deprecate)</p>
+                                <p className="absolute right-[10px] top-[25px] text-gray-500 text-[10px] -mr-4 whitespace-nowrap">(public archive)</p>
                             </div>
                         </div>
                     </div>

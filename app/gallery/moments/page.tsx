@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-const galleryImages = [
+const momentImages = [
     {
         src: "/images/gallery/lionsgate.jpg",
         location: "Vancouver - Lion's Gate, Canada",
@@ -75,7 +75,6 @@ const galleryImages = [
         location: "Calgary - Alberta, Canada",
         date: "July 07, 2025",
     },
-
     {
         src: "/images/gallery/airplane.jpg",
         location: "Somewhere near the pacific",
@@ -145,7 +144,8 @@ const galleryImages = [
         src: "/images/gallery/arch.jpg",
         location: "Paris, France",
         date: "October 1, 2024",
-    }, {
+    },
+    {
         src: "/images/gallery/oldwoman.jpg",
         location: "Old Woman Bay, Canada",
         date: "October 1, 2024",
@@ -187,8 +187,8 @@ const galleryImages = [
     },
 ];
 
-export default function Gallery() {
-    const [selectedImage, setSelectedImage] = useState<typeof galleryImages[0] | null>(null);
+export default function Moments() {
+    const [selectedImage, setSelectedImage] = useState<typeof momentImages[0] | null>(null);
 
     return (
         <main className="min-h-screen w-full bg-black text-white p-8 font-virgil">
@@ -202,18 +202,19 @@ export default function Gallery() {
                         </svg>
                     </Link>
                     <span>/</span>
-                    <span className="text-white">gallery</span>
+                    <Link href="/gallery" className="hover:text-white transition-colors">gallery</Link>
+                    <span>/</span>
+                    <span className="text-white">moments</span>
                 </header>
 
                 <div className="text-left mb-12">
-                    <Link href="/gallery/moments" className="text-xs italic text-gray-400 hover:text-white transition-colors underline decoration-1 underline-offset-4">
-                        a collection of moments
-                    </Link>
+                    <h1 className="text-lg font-medium mb-2">Moments</h1>
+                    <p className="text-xs italic text-gray-400">captured in time</p>
                 </div>
 
                 {/* Masonry Grid */}
                 <div className="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4">
-                    {galleryImages.map((image, index) => (
+                    {momentImages.map((image, index) => (
                         <div
                             key={index}
                             className="break-inside-avoid relative group cursor-pointer overflow-hidden rounded-sm"

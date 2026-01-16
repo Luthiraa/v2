@@ -2,9 +2,14 @@ import Link from "next/link";
 
 const projects = [
     {
+        title: "Vid2ASCII",
+        description: "Converts videos to ASCII art in real-time w/ 30 FPS VP9 .webm - that preserves the live preview exactly + WebGPU rendering",
+        href: "https://wspr-zeta.vercel.app/"
+    },
+    {
         title: "Julie",
         description: "A zero-cost, open-source desktop AI assistant that understands your screen and responds in real time.",
-        href: "https://github.com/Luthiraa/julie?tab=readme-ov-file"
+        href: "https://tryjulie.vercel.app/"
     },
     {
         title: "RLC Dev",
@@ -31,21 +36,11 @@ const projects = [
         description: "Autonomous microgrid management with deep reinforcement learning, published on ieee sege 2025.",
         href: "https://arxiv.org/abs/2509.03666"
     },
-    {
-        title: "DeepMetal",
-        description: "Compiler stack that transforms ML models into optimized edge executables, speed and efficiency you unlike standard toolchains.",
-        href: "https://github.com/Luthiraa/DeepMetal"
-    },
-    {
-        title: "A.I.M.",
-        description: "Artificially Intelligent Maps, worlds first AI enabled map with map agents that can plan your day,trip and more.",
-        href: "https://github.com/Luthiraa/AIM"
-    },
 ];
 
 export default function Projects() {
     return (
-        <main className="min-h-screen w-full bg-black text-white p-8 font-mono flex flex-col items-center">
+        <main className="min-h-screen w-full bg-black text-white p-8 font-virgil flex flex-col items-center">
             <div className="max-w-[500px] w-full">
                 {/* Header */}
                 <header className="flex items-center gap-4 mb-12 text-xs text-gray-400">

@@ -2,29 +2,22 @@ import Link from "next/link";
 
 const workExperience = [
     {
-        company: "Qualcomm",
-        role: "Embedded Software",
-        date: "Incoming May 2026",
-        description: "Snapdragon display firmware team.",
-        href: "https://www.qualcomm.com/snapdragon/overview"
-    },
-    {
         company: "ARISE",
-        role: "MTS - Founding Engineer",
+        role: "Engineering",
         date: "Jul 2025 - Nov 2025",
         description: "Building the world's first all in one robotics education platform.",
         href: "https://arisesim.com/"
     },
     {
         company: "Dash Social",
-        role: "Software",
+        role: "Engineering",
         date: "May 2025 - Aug 2025",
-        description: "Data Foundation team",
+        description: "Data foundation team - building data monitoring and analysis tools.",
         href: "https://dashsocial.com/"
     },
     {
         company: "RBC Borealis",
-        role: "Applied ML Research",
+        role: "Research",
         date: "Mar 2025 - May 2025",
         description: "Deep reinforcement learning agent for microgrid management.",
         href: "https://arxiv.org/abs/2509.03666"
@@ -38,9 +31,9 @@ const workExperience = [
     },
     {
         company: "Teknion",
-        role: "Software",
+        role: "Engineering",
         date: "May 2024 - Aug 2024",
-        description: "Core erp software infra.",
+        description: "Core erp software infrastructure",
         href: "https://www.teknion.com/ca"
     },
     {
@@ -54,7 +47,7 @@ const workExperience = [
 
 export default function Work() {
     return (
-        <main className="min-h-screen w-full bg-black text-white p-8 font-mono flex flex-col items-center">
+        <main className="min-h-screen w-full bg-black text-white p-8 font-virgil flex flex-col items-center">
             <div className="max-w-[500px] w-full">
                 {/* Header */}
                 <header className="flex items-center gap-4 mb-12 text-xs text-gray-400">

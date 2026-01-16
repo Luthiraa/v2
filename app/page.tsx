@@ -1,7 +1,26 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+    const [clickCount, setClickCount] = useState(0);
+    const router = useRouter();
+
+    useEffect(() => {
+        if (clickCount >= 5) {
+            router.push("/secret");
+        }
+
+        const timer = setTimeout(() => {
+            setClickCount(0);
+        }, 500);
+
+        return () => clearTimeout(timer);
+    }, [clickCount, router]);
+
     return (
         <main className="h-screen w-full flex flex-col items-center justify-center p-4 text-center max-w-[500px] mx-auto space-y-6 text-xs overflow-hidden">
 
@@ -45,7 +64,10 @@ export default function Home() {
             {/* Links Section */}
             <footer className="w-full pt-0 -mt-6 pb-8 flex flex-col items-center font-virgil relative z-10">
 
-                <div className="relative w-16 h-16 mb-12 group cursor-pointer">
+                <div
+                    className="relative w-16 h-16 mb-12 group cursor-pointer"
+                    onClick={() => setClickCount(c => c + 1)}
+                >
                     {/* Static Image */}
                     <Image
                         src="/cat/cat1.png"

@@ -6,6 +6,11 @@ import { useState } from "react";
 
 const galleryImages = [
     {
+        src: "/images/gallery/me_gallery.png",
+        location: "New Addition",
+        date: "Recently Added",
+    },
+    {
         src: "/images/gallery/lionsgate.jpg",
         location: "Vancouver - Lion's Gate, Canada",
         date: "July 10, 2025",

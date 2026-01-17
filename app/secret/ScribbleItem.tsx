@@ -84,6 +84,20 @@ export default function ScribbleItem({ src, index }: { src: string; index: numbe
                 </svg>
             </div>
 
+            {/* Special 'Pet Me' Interaction for Cat Video/Image */}
+            {(src.toLowerCase().includes("5179") || src.toLowerCase().includes("5260") || src.toLowerCase().includes("4980") || src.toLowerCase().includes("5302") || src.toLowerCase().includes("cat_curl")) && (
+                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none block whitespace-nowrap">
+                    <div className="flex flex-col items-center">
+                        <span className="font-virgil text-lg text-white drop-shadow-md bg-black/40 px-2 rounded mb-1">pet me</span>
+                        <svg width="40" height="40" viewBox="0 0 50 50" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" className="animate-bounce">
+                            {/* Arrow pointing UP */}
+                            <path d="M25,40 Q25,25 25,10" />
+                            <path d="M15,20 L25,10 L35,20" />
+                        </svg>
+                    </div>
+                </div>
+            )}
+
             {/* Messy "Tape" or "Scribble" Overlay randomly placed */}
             {index % 3 === 0 && (
                 <div className="absolute -top-4 -right-4 z-30 w-12 h-12 opacity-80 group-hover:animate-pulse">

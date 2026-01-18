@@ -10,7 +10,7 @@ export default function Home() {
     const router = useRouter();
 
     useEffect(() => {
-        if (clickCount >= 5) {
+        if (clickCount >= 2) {
             router.push("/secret");
         }
 
@@ -85,6 +85,14 @@ export default function Home() {
                         className="absolute inset-0 w-full h-full object-contain invert opacity-0 group-hover:opacity-100 transition-opacity duration-200"
                         unoptimized
                     />
+                    {/* Pet me arrow - positioned absolutely relative to the cat container */}
+                    <div className="absolute left-full top-1/2 -translate-y-1/2 ml-3 w-max pointer-events-none flex items-center group-hover:opacity-0 transition-opacity duration-200">
+                        <svg className="w-[30px] h-[20px] text-gray-500 opacity-70 -ml-1" viewBox="0 0 30 20" fill="none">
+                            <path d="M 28 10 C 20 13, 10 13, 2 10" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+                            <path d="M 2 10 L 8 6 M 2 10 L 8 14" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                        <span className="text-gray-500 text-[10px] font-virgil pt-0.5 transform -rotate-2">pet me</span>
+                    </div>
                 </div>
 
                 <div className="flex flex-row gap-16 items-start text-sm">

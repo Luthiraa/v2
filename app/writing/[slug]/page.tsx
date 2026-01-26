@@ -176,7 +176,7 @@ const TwitterAlgoPost = () => (
         <p>
             Unlike a standard transformer (like GPT-4) where tokens attend to all other tokens, the feed scorer utilizes <strong>Candidate Isolation</strong>.
         </p>
-        <ul className="list-disc pl-5 space-y-2 text-gray-400 marker:text-gray-600 mt-4">
+        <ul className="list-disc pl-5 space-y-2 text-gray-400 marker:text-gray-600 mt-4 text-lg">
             <li>
                 <strong>The Mechanism:</strong> A candidate tweet can attend to the User Context (your history, demographics, cell state), but it is mathematically blinded to other candidate tweets in the same batch via an attention mask.
             </li>
@@ -185,23 +185,23 @@ const TwitterAlgoPost = () => (
             </li>
         </ul>
 
-        <h4 className="font-virgil text-white mt-8 mb-2 text-lg">The Weighted Sum (Multi-Task Learning)</h4>
+        <h4 className="font-virgil text-white mt-8 mb-2 text-xl">The Weighted Sum (Multi-Task Learning)</h4>
         <p>
             The neural network does <em>not</em> output a single "quality score." Instead, it uses <strong>Multi-Task Learning (MTL)</strong> to predict a vector of independent probabilities for every possible user action:
         </p>
-        <div className="p-4 bg-gray-900 border border-gray-800 rounded font-mono text-xs text-gray-300 overflow-x-auto whitespace-nowrap my-4">
+        <div className="p-4 bg-gray-900 border border-gray-800 rounded font-mono text-sm text-gray-300 overflow-x-auto whitespace-nowrap my-4">
             [P(Like), P(Reply), P(Repost), P(Video_View_50%), P(Report), P(Mute)...]
         </div>
         <p>
             These probabilities are fed into a final logistic regression layer:
         </p>
-        <div className="px-4 py-2 bg-blue-900/10 border-l-2 border-blue-500 font-mono text-xs text-blue-200 mb-6">
+        <div className="px-4 py-2 bg-blue-900/10 border-l-2 border-blue-500 font-mono text-sm text-blue-200 mb-6">
             Final_Score = Σ (Weight_i * Probability_i)
         </div>
         <p>
             <strong>The Asymmetry of Signals:</strong>
         </p>
-        <ul className="list-disc pl-5 space-y-2 text-gray-400 marker:text-gray-600 mt-2">
+        <ul className="list-disc pl-5 space-y-2 text-gray-400 marker:text-gray-600 mt-2 text-lg">
             <li>
                 <strong>Positive Signals:</strong> A <code>Reply</code> is heavily upweighted (e.g., 54x a Like) because it signals time spent and conversation.
             </li>
@@ -220,32 +220,32 @@ const TwitterAlgoPost = () => (
 
         <div className="space-y-8">
             <div className="border-l-2 border-white/20 pl-4 py-1">
-                <h4 className="font-bold text-white mb-1 font-virgil">1. Diversity Attentuation (The "Spam" Damper)</h4>
-                <p className="text-sm">
+                <h4 className="font-bold text-white mb-1 font-virgil text-xl">1. Diversity Attentuation (The "Spam" Damper)</h4>
+                <p className="text-lg">
                     The system runs an explicit <strong>Author Diversity Scorer</strong> after the main ranking. It penalizes multiple posts from the same author in a single session.
                     <br /><em className="text-gray-500">Tactic:</em> Posting 10 times an hour is actively harmful. The system will likely only pick your highest-scoring post and suppress the others to preserve feed variety. <strong>Focus on one high-signal post rather than volume.</strong>
                 </p>
             </div>
 
             <div className="border-l-2 border-white/20 pl-4 py-1">
-                <h4 className="font-bold text-white mb-1 font-virgil">2. Embedding Stability (The Niche Rule)</h4>
-                <p className="text-sm">
+                <h4 className="font-bold text-white mb-1 font-virgil text-xl">2. Embedding Stability (The Niche Rule)</h4>
+                <p className="text-lg">
                     To be retrieved by Phoenix, your <code>Post_Vector</code> needs to be stable. If you post about coding today, politics tomorrow, and cooking on Sunday, your vector drifts. You become "retrievable" to no one because your semantic center is diluted.
                     <br /><em className="text-gray-500">Tactic:</em> <strong>Consistency tightens your embedding variance.</strong> Pick a lane to help the ANN search find you.
                 </p>
             </div>
 
             <div className="border-l-2 border-white/20 pl-4 py-1">
-                <h4 className="font-bold text-white mb-1 font-virgil">3. Optimizing for Weighted Actions</h4>
-                <p className="text-sm">
+                <h4 className="font-bold text-white mb-1 font-virgil text-xl">3. Optimizing for Weighted Actions</h4>
+                <p className="text-lg">
                     Because <code>w_reply {'>'}{'>'} w_like</code>, content that generates discussion outranks content that generates passive agreement. However, <code>w_mute</code> is a massive penalty.
                     <br /><em className="text-gray-500">Tactic:</em> Avoid rage-bait. While it drives replies, it also drives mutes and blocks, which are heavily weighted negatives that will blacklist you from future candidate sets.
                 </p>
             </div>
 
             <div className="border-l-2 border-white/20 pl-4 py-1">
-                <h4 className="font-bold text-white mb-1 font-virgil">4. The "Zero-Day" Filter Problem</h4>
-                <p className="text-sm">
+                <h4 className="font-bold text-white mb-1 font-virgil text-xl">4. The "Zero-Day" Filter Problem</h4>
+                <p className="text-lg">
                     Before scoring, posts pass through boolean filters. The most dangerous are "Blocked Author" and "Muted Keywords".
                     <br /><em className="text-gray-500">Tactic:</em> If you use polarizing keywords that many people have on their mute list, you are filtered out <strong>before the model even sees your content.</strong> Clean vocabulary increases total addressable market.
                 </p>
@@ -305,8 +305,8 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 
             <article className="max-w-[650px] mx-auto w-full animate-in fade-in slide-in-from-bottom-4 duration-700">
                 <header className="mb-12 border-b border-white/10 pb-8">
-                    <span className="text-xs font-mono text-gray-500 block mb-3 uppercase tracking-widest">{post.date}</span>
-                    <h1 className="text-3xl md:text-5xl font-bold leading-tight font-virgil tracking-tight">{post.title}</h1>
+                    <span className="text-xs text-gray-500 block mb-3 uppercase tracking-widest">{post.date}</span>
+                    <h1 className="text-2xl md:text-5xl font-bold leading-tight font-virgil tracking-tight">{post.title}</h1>
                 </header>
 
                 <div className="font-georgia text-lg leading-relaxed text-gray-300">

@@ -111,90 +111,143 @@ function TwoTowerDiagram() {
 const TwitterAlgoPost = () => (
     <div className="space-y-8">
         <p>
-            The "algorithm" isn't a single magic score. It's a massive, industrial-scale pipeline designed to filter the entire world's noise down to a handful of tweets you might actually care about.
+            The "algorithm" isn't a single magic score. It's a massive, industrial-scale retrieval and ranking pipeline designed to filter the entire world's noise down to a handful of tweets you might actually care about.
         </p>
         <p>
             Recently, X (formerly Twitter) updated their open-source documentation for the "For You" feed. It's distinct from the 2023 release. I've broken down how it works, what's changed, and mechanically, how you can optimize for it.
         </p>
 
-        <h3 className="text-2xl font-virgil text-white mt-12 mb-4">The Pipeline</h3>
+        <h3 className="text-2xl font-virgil text-white mt-12 mb-4">The Pipeline Architecture</h3>
         <p>
-            Every time you pull to refresh, the system executes a complex chain of retrieval and ranking. It doesn't score every tweet in existence. That would be impossible. Instead, it uses a funnel approach.
+            Every time you pull to refresh, the system executes a complex chain of operations. It doesn't score every tweet in existence (which would be computationally impossible). Instead, it uses a <strong>funnel approach</strong>:
         </p>
 
         <PipelineDiagram />
 
         <p>
-            The process has two distinct phases: <strong>Candidate Sourcing</strong> (finding possible tweets) and <strong>Ranking</strong> (deciding the order).
+            The process has two distinct phases: <strong>Candidate Sourcing</strong> (fetching ~1500 candidates from hundreds of millions) and <strong>Ranking</strong> (scoring and sorting them).
         </p>
 
         <h3 className="text-xl font-virgil text-white mt-8 mb-2">1. Candidate Sourcing: Thunder vs. Phoenix</h3>
         <p>
-            The system pulls specifically from two buckets:
+            The system pulls candidates from two primary engines. This is not a simple database query; it is a distributed systems challenge of retrieving relevant items from a pool of hundreds of millions within typical P99 latency constraints (under 200ms).
         </p>
-        <ul className="list-disc pl-5 space-y-2 text-gray-400 marker:text-gray-600">
+        <ul className="list-disc pl-5 space-y-6 text-gray-400 marker:text-gray-600 mt-6">
             <li>
-                <strong className="text-gray-200">Thunder (In-Network):</strong> This is strict. It looks at people you follow. It's a fast, in-memory store powered by Kafka streams. If someone follows you, your post <em className="italic">will</em> be retrieved by Thunder for them. This is your "guaranteed" distribution pool.
+                <div className="text-gray-200 font-bold text-lg font-virgil">Thunder (In-Network)</div>
+                <div className="text-sm mt-2 leading-relaxed">
+                    Thunder is the evolution of Twitter's legacy timeline infrastructure (replacing the old "fanout-on-write" Redis clusters). It functions as a scalable, in-memory graph store specialized for "In-Network" retrieval.
+                    <ul className="list-disc pl-4 mt-2 space-y-1 text-gray-500">
+                        <li><strong>Mechanism:</strong> It consumes high-throughput Kafka streams of post-creation events.</li>
+                        <li><strong>Storage:</strong> Instead of materialized home timelines (which waste RAM for inactive users), Thunder likely uses a hybrid approach: storing "User Active" windows in RAM (Manhattan/Redis-style) and falling back to computed indexes for cold retrieval.</li>
+                        <li><strong>Efficiency:</strong> It guarantees sub-millisecond access to the most recent tweets of everyone you follow, regardless of graph density (whether you follow 10 or 10,000 people).</li>
+                    </ul>
+                </div>
             </li>
             <li>
-                <strong className="text-gray-200">Phoenix (Out-of-Network):</strong> This is the discovery engine. It finds content from people the user <em>doesn't</em> follow. It uses a "Two-Tower" neural network architecture.
+                <div className="text-gray-200 font-bold text-lg font-virgil">Phoenix (Out-of-Network)</div>
+                <div className="text-sm mt-2 leading-relaxed">
+                    Phoenix is the "For You" discovery engine. It solves the problem: <em>"Find the 100 best tweets for User A from the 500 million posted today."</em> It does this via <strong>Vector Similarity Search</strong> using a Two-Tower architecture.
+                    <ul className="list-disc pl-4 mt-2 space-y-2 text-gray-500">
+                        <li>
+                            <strong>The User Tower:</strong> Aggregates your real-time engagement history (likes, retweets, dwell time), negative signals, and static demographics into a dense vector (e.g., 144 dimensions). This embedding updates in near real-time.
+                        </li>
+                        <li>
+                            <strong>The Candidate Tower:</strong> Processes every new tweet through LLMs (BERT-derived) to extract semantic meaning, coupled with author reputation graphs (PageRank), to produce a static <em>Candidate Embedding</em>.
+                        </li>
+                        <li>
+                            <strong>Approximate Nearest Neighbor (ANN):</strong> The system uses HNSW (Hierarchical Navigable Small World) graphs to perform dot-product similarity searches across millions of vectors in milliseconds. It doesn't check every tweet; it traverses the graph to find the "neighborhood" of vectors most aligned with your current state.
+                        </li>
+                    </ul>
+                </div>
             </li>
         </ul>
 
         <TwoTowerDiagram />
 
-        <p>
-            In the Phoenix model, your behavior (likes, RTs) creates a "User Embedding". Every post has a "Post Embedding". The system effectively runs a massive similarity search to find posts that are mathematically "close" to your interests.
+        <p className="text-sm text-gray-400 border-l border-blue-500/30 pl-4 py-1 mt-4">
+            <strong>Key Distinction:</strong> Thunder is deterministic (you follow them, you see it). Phoenix is probabilistic (mathematical guess of interest).
         </p>
 
-        <h3 className="text-2xl font-virgil text-white mt-12 mb-4">The Scorer</h3>
+        <h3 className="text-2xl font-virgil text-white mt-12 mb-4">The Scorer: Candidate Isolation</h3>
         <p>
-            Once the system has ~1500 candidates from Thunder and Phoenix, it passes them to the <strong>Scorer</strong>. This is where the magic (and the pain) happens.
+            The ranking stage reduces the ~1500 candidates to the final ~20 items you see. This is done by a heavy-weight <strong>48M parameter Masked Transformer</strong>.
         </p>
         <p>
-            It uses a transformer model (derived from Grok) to predict the probability of you taking specific actions. Note that these are separate predictions—it calculates the chance you'll Like, the chance you'll Reply, the chance you'll Scroll Past, etc.
+            Unlike a standard transformer (like GPT-4) where tokens attend to all other tokens, the feed scorer utilizes <strong>Candidate Isolation</strong>.
         </p>
+        <ul className="list-disc pl-5 space-y-2 text-gray-400 marker:text-gray-600 mt-4">
+            <li>
+                <strong>The Mechanism:</strong> A candidate tweet can attend to the User Context (your history, demographics, cell state), but it is mathematically blinded to other candidate tweets in the same batch via an attention mask.
+            </li>
+            <li>
+                <strong>The Why:</strong> This ensures <strong>Score Stability</strong>. If Tweet A scores 0.9, it should score 0.9 regardless of whether it's paired with a viral meme or a boring ad. This also allows for aggressive <strong>caching</strong>—previously scored candidates can be reused without re-inference.
+            </li>
+        </ul>
+
+        <h4 className="font-virgil text-white mt-8 mb-2 text-lg">The Weighted Sum (Multi-Task Learning)</h4>
         <p>
-            These probabilities are then fed into a linear equation:
+            The neural network does <em>not</em> output a single "quality score." Instead, it uses <strong>Multi-Task Learning (MTL)</strong> to predict a vector of independent probabilities for every possible user action:
         </p>
-        <div className="p-4 bg-gray-900 border border-gray-800 rounded font-mono text-xs text-gray-300 overflow-x-auto">
-            Score = (w_like * P_like) + (w_reply * P_reply) + (w_repost * P_repost) - (w_mute * P_mute)...
+        <div className="p-4 bg-gray-900 border border-gray-800 rounded font-mono text-xs text-gray-300 overflow-x-auto whitespace-nowrap my-4">
+            [P(Like), P(Reply), P(Repost), P(Video_View_50%), P(Report), P(Mute)...]
         </div>
         <p>
-            <strong>Implication:</strong> Not all engagement is equal. A "Reply" might be weighted 50x higher than a "Like". Crucially, negative signals (blocking, muting, clicking "not interested") have massive negative weights. One "Show fewer like this" can nuke your reach with a cluster of users.
+            These probabilities are fed into a final logistic regression layer:
         </p>
-
-        <h3 className="text-2xl font-virgil text-white mt-12 mb-4">How to Beat It</h3>
+        <div className="px-4 py-2 bg-blue-900/10 border-l-2 border-blue-500 font-mono text-xs text-blue-200 mb-6">
+            Final_Score = Σ (Weight_i * Probability_i)
+        </div>
         <p>
-            Understanding the architecture reveals the optimization function.
+            <strong>The Asymmetry of Signals:</strong>
+        </p>
+        <ul className="list-disc pl-5 space-y-2 text-gray-400 marker:text-gray-600 mt-2">
+            <li>
+                <strong>Positive Signals:</strong> A <code>Reply</code> is heavily upweighted (e.g., 54x a Like) because it signals time spent and conversation.
+            </li>
+            <li>
+                <strong>Negative Signals:</strong> <code>Mute</code>, <code>Block</code>, and <code>Report</code> carry massive negative coefficients (-74x to -369x).
+            </li>
+            <li>
+                <strong>Implication:</strong> You can hunt for likes all day, but one "Not Interested" signal effectively erases the positive signal of dozens of likes. It is a survival game first, a popularity contest second.
+            </li>
+        </ul>
+
+        <h3 className="text-2xl font-virgil text-white mt-12 mb-4">Optimization Strategy</h3>
+        <p>
+            Understanding the architecture reveals the optimization function. Here is the technical breakdown of how to align with the system:
         </p>
 
-        <div className="space-y-6">
+        <div className="space-y-8">
             <div className="border-l-2 border-white/20 pl-4 py-1">
-                <h4 className="font-bold text-white mb-1 font-virgil">1. Diversity Penalties</h4>
+                <h4 className="font-bold text-white mb-1 font-virgil">1. Diversity Attentuation (The "Spam" Damper)</h4>
                 <p className="text-sm">
-                    The system has an explicit "Author Diversity Scorer". If you post 5 times in an hour, the system will likely only show your best one to a user to prevent you from flooding their feed. <strong>Quality &gt; Volume within short windows.</strong>
+                    The system runs an explicit <strong>Author Diversity Scorer</strong> after the main ranking. It penalizes multiple posts from the same author in a single session.
+                    <br /><em className="text-gray-500">Tactic:</em> Posting 10 times an hour is actively harmful. The system will likely only pick your highest-scoring post and suppress the others to preserve feed variety. <strong>Focus on one high-signal post rather than volume.</strong>
                 </p>
             </div>
 
             <div className="border-l-2 border-white/20 pl-4 py-1">
-                <h4 className="font-bold text-white mb-1 font-virgil">2. Embedding Alignment</h4>
+                <h4 className="font-bold text-white mb-1 font-virgil">2. Embedding Stability (The Niche Rule)</h4>
                 <p className="text-sm">
-                    To show up in "Phoenix" (discovery), your content needs to visually and semantically resemble content that your target audience is already engaging with. Niche-hopping confuses the embedding. <strong>Consistency helps the machine categorize you.</strong>
+                    To be retrieved by Phoenix, your <code>Post_Vector</code> needs to be stable. If you post about coding today, politics tomorrow, and cooking on Sunday, your vector drifts. You become "retrievable" to no one because your semantic center is diluted.
+                    <br /><em className="text-gray-500">Tactic:</em> <strong>Consistency tightens your embedding variance.</strong> Pick a lane to help the ANN search find you.
                 </p>
             </div>
 
             <div className="border-l-2 border-white/20 pl-4 py-1">
-                <h4 className="font-bold text-white mb-1 font-virgil">3. The Interaction Hierarchy</h4>
+                <h4 className="font-bold text-white mb-1 font-virgil">3. Optimizing for Weighted Actions</h4>
                 <p className="text-sm">
-                    Because of the weighted sum, high-effort interactions (replies, reposts) are worth exponentially more than passive ones (likes, views). Content that invites conversation (even controversy, unfortunately) will almost always outrank content that is merely "nice" but passive.
+                    Because <code>w_reply {'>'}{'>'} w_like</code>, content that generates discussion outranks content that generates passive agreement. However, <code>w_mute</code> is a massive penalty.
+                    <br /><em className="text-gray-500">Tactic:</em> Avoid rage-bait. While it drives replies, it also drives mutes and blocks, which are heavily weighted negatives that will blacklist you from future candidate sets.
                 </p>
             </div>
 
             <div className="border-l-2 border-white/20 pl-4 py-1">
-                <h4 className="font-bold text-white mb-1 font-virgil">4. The Filters</h4>
+                <h4 className="font-bold text-white mb-1 font-virgil">4. The "Zero-Day" Filter Problem</h4>
                 <p className="text-sm">
-                    Before scoring even happens, posts are filtered. 'Muted keywords' and 'Blocked authors' remove you from the candidate pool instantly. If you use words that many people mute, your total addressable market shrinks silently.
+                    Before scoring, posts pass through boolean filters. The most dangerous are "Blocked Author" and "Muted Keywords".
+                    <br /><em className="text-gray-500">Tactic:</em> If you use polarizing keywords that many people have on their mute list, you are filtered out <strong>before the model even sees your content.</strong> Clean vocabulary increases total addressable market.
                 </p>
             </div>
         </div>

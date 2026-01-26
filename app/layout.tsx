@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-    title: "Luthira Abeykoon",
-    description: "Personal website of Luthira Abeykoon",
+    title: "luthira abeykoon",
+    description: "from asynchronous thoughts",
 };
 
 export default function RootLayout({

@@ -55,8 +55,12 @@ export default function Home() {
                     I like building things end to end, from the idea stage to something real people can try.
                 </p>
 
-                <p>
+                {/* <p>
                     I work across hardware, software, and AI. I’ve built tools, sites, and systems that solve problems I care about, and I’m always looking for the next thing to make.
+                </p> */}
+
+                <p>
+                    Recently, I’ve been using writing to think more clearly and reflect. You can read some of that <Link href="/writing" className="underline decoration-1 underline-offset-4 hover:text-gray-300">here</Link>.
                 </p>
             </section>
 

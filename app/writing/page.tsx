@@ -3,11 +3,19 @@ import Link from "next/link";
 const posts = [
     {
         id: 0,
+        title: "2025 Lessons",
+        date: "2025-12-31",
+        summary: "A collection of lessons learned from 2025 - the year that changed everything.",
+        slug: "2025-lessons"
+    },
+    {
+        id: 1,
         title: "Reverse Engineering the Feed",
         date: "2026-01-25",
         summary: "A deep dive into the X ranking system: Thunder, Phoenix, and optimization strategies.",
         slug: "reverse-engineering-the-feed"
     },
+
 ];
 
 export default function Writing() {

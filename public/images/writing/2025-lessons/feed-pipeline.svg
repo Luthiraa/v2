@@ -1,0 +1,78 @@
+<svg width="960" height="540" viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#05060a"/>
+            <stop offset="100%" stop-color="#0e1118"/>
+        </linearGradient>
+        <linearGradient id="pipe" x1="0%" x2="100%">
+            <stop offset="0%" stop-color="#66d8ff"/>
+            <stop offset="100%" stop-color="#ff7ddb"/>
+        </linearGradient>
+        <style><![CDATA[
+            text{font-family:'Space Mono','Menlo',monospace;fill:#d8e4ff;font-size:16px}
+            .label{font-size:14px;fill:#9fb1d2;text-transform:uppercase;letter-spacing:2px}
+            .small{font-size:12px;fill:#8294b7}
+        ]]></style>
+    </defs>
+    <rect width="960" height="540" fill="url(#bg)" rx="32"/>
+
+    <text class="label" x="480" y="56" text-anchor="middle">GEMINI-VIEW OF THE 2025 FEED PIPELINE</text>
+
+    <!-- user prompt -->
+    <g transform="translate(60,120)">
+        <rect width="200" height="120" rx="18" fill="#0f1625" stroke="#69d2ff" stroke-width="1.5"/>
+        <text x="100" y="50" text-anchor="middle">User Session</text>
+        <text class="small" x="100" y="80" text-anchor="middle">Context + Intent</text>
+    </g>
+
+    <!-- thunder -->
+    <g transform="translate(320,80)">
+        <rect width="220" height="140" rx="18" fill="#1c0f24" stroke="#ff5ba7" stroke-dasharray="6 6"/>
+        <text x="110" y="48" text-anchor="middle">Thunder</text>
+        <text class="small" x="110" y="76" text-anchor="middle">In-network firehose</text>
+        <text class="small" x="110" y="102" text-anchor="middle">Graph cache + Kafka</text>
+    </g>
+
+    <!-- phoenix -->
+    <g transform="translate(320,260)">
+        <rect width="220" height="160" rx="18" fill="#111c2d" stroke="#7dd3fc" stroke-dasharray="6 6"/>
+        <text x="110" y="48" text-anchor="middle">Phoenix</text>
+        <text class="small" x="110" y="76" text-anchor="middle">Out-of-network discovery</text>
+        <text class="small" x="110" y="104" text-anchor="middle">Vector search + ANN</text>
+    </g>
+
+    <!-- merge tank -->
+    <g transform="translate(590,180)">
+        <rect width="180" height="80" rx="14" fill="#121a22" stroke="#6ddab2"/>
+        <text x="90" y="38" text-anchor="middle">Hydrate & Filter</text>
+        <text class="small" x="90" y="60" text-anchor="middle">Seen / Block / Policy</text>
+    </g>
+
+    <!-- scorer -->
+    <g transform="translate(590,300)">
+        <rect width="180" height="120" rx="14" fill="#1d0f1f" stroke="#fcb564"/>
+        <text x="90" y="46" text-anchor="middle">MTL Scorer</text>
+        <text class="small" x="90" y="74" text-anchor="middle">Candidate isolation</text>
+        <text class="small" x="90" y="100" text-anchor="middle">[Like, Reply, View...]</text>
+    </g>
+
+    <!-- final feed -->
+    <g transform="translate(810,230)">
+        <rect width="120" height="120" rx="60" fill="#f5f6ff"/>
+        <text fill="#0f1220" x="60" y="68" text-anchor="middle">Feed</text>
+    </g>
+
+    <!-- arrows -->
+    <path d="M260 180H320" stroke="url(#pipe)" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M260 240H320" stroke="#7dd3fc" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M540 150L590 200" stroke="#ff7ddb" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M540 350L590 320" stroke="#7dd3fc" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M680 260V300" stroke="#69d2ff" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M770 300H810" stroke="#c0f4ff" stroke-width="4" marker-end="url(#arrow)"/>
+
+    <defs>
+        <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+            <path d="M0 0 L8 4 L0 8 z" fill="#e3f6ff"/>
+        </marker>
+    </defs>
+</svg>

@@ -1,0 +1,52 @@
+<svg width="960" height="420" viewBox="0 0 960 420" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="bg4" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#090b12"/>
+            <stop offset="100%" stop-color="#0f1320"/>
+        </linearGradient>
+        <linearGradient id="impact" x1="0%" x2="100%">
+            <stop offset="0%" stop-color="#fe447d"/>
+            <stop offset="100%" stop-color="#ffd36d"/>
+        </linearGradient>
+        <style><![CDATA[
+            text{font-family:'Space Mono','Menlo',monospace;fill:#f1f5ff;font-size:14px}
+            .caption{fill:#8ba3c9;font-size:13px;text-transform:uppercase;letter-spacing:2px}
+        ]]></style>
+    </defs>
+    <rect width="960" height="420" rx="30" fill="url(#bg4)"/>
+    <text class="caption" x="480" y="48" text-anchor="middle">Shipping Impact Surface</text>
+
+    <!-- axes -->
+    <line x1="160" y1="340" x2="800" y2="340" stroke="#24304a" stroke-width="2"/>
+    <line x1="200" y1="100" x2="200" y2="360" stroke="#24304a" stroke-width="2"/>
+    <text x="804" y="360" fill="#9db3d8">Quality</text>
+    <text transform="rotate(-90 176 210)" x="176" y="210" fill="#9db3d8">Shipped volume</text>
+
+    <!-- heat rectangle -->
+    <rect x="220" y="160" width="520" height="140" rx="18" fill="#11182b" stroke="#1f2c45"/>
+    <rect x="220" y="220" width="520" height="80" fill="url(#impact)" opacity="0.5"/>
+    <text x="480" y="210" text-anchor="middle">Impact = shipped × quality</text>
+    <text x="480" y="245" text-anchor="middle" fill="#ffd8ba">Zero if ship count = 0</text>
+
+    <!-- vaporware -->
+    <circle cx="270" cy="310" r="26" fill="#2b101c" stroke="#ff6c9f"/>
+    <text x="270" y="315" text-anchor="middle" font-size="12">Vaporware</text>
+
+    <!-- shipped cluster -->
+    <circle cx="660" cy="180" r="34" fill="#0b251f" stroke="#48f5c3"/>
+    <text x="660" y="186" text-anchor="middle" font-size="12">Shipped</text>
+    <text x="660" y="206" text-anchor="middle" fill="#aefbe4">Compounding</text>
+
+    <!-- annotation arrows -->
+    <path d="M270 284 L270 240" stroke="#ff6c9f" stroke-width="2" marker-end="url(#arrow5)"/>
+    <text x="270" y="230" text-anchor="middle" fill="#ff9fbf">High talk, zero output</text>
+
+    <path d="M660 216 L660 260" stroke="#48f5c3" stroke-width="2" marker-end="url(#arrow5)"/>
+    <text x="660" y="280" text-anchor="middle" fill="#aefbe4">Evidence + trust</text>
+
+    <defs>
+        <marker id="arrow5" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+            <path d="M0 0 L10 5 L0 10 z" fill="#fbedff"/>
+        </marker>
+    </defs>
+</svg>

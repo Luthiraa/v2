@@ -1,6 +1,6 @@
 "use client";
 
-import GeminiFigure from "./GeminiFigure";
+
 
 function PipelineDiagram() {
     return (
@@ -65,13 +65,71 @@ function PipelineDiagram() {
 
 function TwoTowerDiagram() {
     return (
-        <GeminiFigure
-            src="/images/writing/2025-lessons/two-tower.svg"
-            alt="Gemini-styled visual of the Phoenix two-tower retrieval flow with user features, dot-product similarity, and candidate post embeddings."
-            caption=""
-            width={960}
-            height={540}
-        />
+        <div className="my-12 p-6 border border-white/10 rounded-lg bg-gray-900/30 font-virgil select-none text-white/90">
+            <div className="flex flex-col items-center gap-12">
+
+                {/* Upper Section: Towers and Dot Product */}
+                <div className="flex flex-col md:flex-row items-center justify-center gap-4 w-full">
+
+                    {/* User Tower */}
+                    <div className="flex flex-col gap-3 p-4 border border-white/10 bg-black/40 rounded-lg w-full max-w-[240px] text-center">
+                        <div className="text-sm font-bold text-gray-200">User Tower</div>
+                        <div className="text-[10px] text-gray-500">Recent actions / traits</div>
+                        <div className="h-px w-full bg-white/10 my-1"></div>
+                        <div className="text-[10px] text-gray-500">Likes · Reposts · Dwell</div>
+
+                        <div className="p-2 border border-white/10 bg-white/5 rounded text-[11px] text-gray-400 mt-1">
+                            Feature tensor
+                        </div>
+                        <div className="p-2 border border-green-500/20 bg-green-500/20 rounded text-[11px] text-green-400 font-bold shadow-[0_0_10px_rgba(74,222,128,0.1)]">
+                            User Embedding
+                        </div>
+                    </div>
+
+                    {/* Connection */}
+                    <div className="flex flex-col items-center gap-1 md:flex-row md:items-center">
+                        <div className="hidden md:block w-8 h-px bg-white/20"></div>
+                        <div className="md:hidden h-8 w-px bg-white/20"></div>
+
+                        <div className="relative w-24 h-24 rounded-full border border-white/10 bg-black flex items-center justify-center z-10">
+                            <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
+                            <div className="absolute top-1/2 mt-2 flex flex-col items-center">
+                                <div className="text-[8px] text-gray-500 font-mono">dot product</div>
+                                <div className="text-[8px] text-gray-700">Similarity score</div>
+                            </div>
+                        </div>
+
+                        <div className="hidden md:block w-8 h-px bg-white/20"></div>
+                        <div className="md:hidden h-8 w-px bg-white/20"></div>
+                    </div>
+
+                    {/* Content Tower */}
+                    <div className="flex flex-col gap-3 p-4 border border-white/10 bg-black/40 rounded-lg w-full max-w-[240px] text-center">
+                        <div className="text-sm font-bold text-gray-200">Content Tower</div>
+                        <div className="text-[10px] text-gray-500">Tweet text · media · author</div>
+                        <div className="h-px w-full bg-white/10 my-1"></div>
+                        <div className="text-[10px] text-gray-500">LLM summaries</div>
+
+                        <div className="p-2 border border-white/10 bg-white/5 rounded text-[11px] text-gray-400 mt-1">
+                            Semantic vector
+                        </div>
+                        <div className="p-2 border border-yellow-500/20 bg-yellow-500/20 rounded text-[11px] text-yellow-400 font-bold shadow-[0_0_10px_rgba(250,204,21,0.1)]">
+                            Post Embedding
+                        </div>
+                    </div>
+                </div>
+
+                {/* Bottom Section: Top-K */}
+                <div className="flex flex-col items-center gap-2 -mt-4">
+                    <div className="h-8 w-px bg-white/20"></div>
+                    <div className="p-3 border border-white/10 bg-white/5 rounded-lg w-[200px] text-center">
+                        <div className="text-xs font-bold text-white">Top-K candidates</div>
+                        <div className="text-[10px] text-gray-500 mt-1">Feed scorer consumes this set</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     );
 }
 
@@ -172,8 +230,12 @@ export default function ReverseEngineeringTheFeed() {
             </section>
 
             <p className="mt-12 pt-8 border-t border-white/10 text-sm italic opacity-60">
-                Source: Analysis based on recently released X algorithm documentation and architecture diagrams.
-            </p>
+                Sources:
+                <ul>
+                    <li>
+                        <a href="https://github.com/xai-org/x-algorithm" target="_blank" rel="noopener noreferrer">X Algorithm</a>
+                    </li>
+                </ul>            </p>
         </div>
     );
 }

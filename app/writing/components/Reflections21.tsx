@@ -159,9 +159,11 @@ export default function Reflections21() {
                         Another shift has been saying yes more. Not blindly, but leaning toward action instead of hesitation. A lot of the best things in my life came from moments where I could’ve easily said no. Sending the message. Showing up to the thing alone. Starting projects before I felt ready. Most opportunities don’t arrive polished, they show up messy and uncertain. Taking more swings just increases the chances that something unexpected works.
                     </p>
 
-                    <p>
-                        — There’s a post by Logan Kilpatrick that stuck with me: the world rewards audacity, not potential. And the older I get, the more true that feels. Potential is invisible. It only becomes real once you act on it —
-                    </p>
+                    <div className="bg-white/5 border border-white/10 rounded-2xl p-6 my-8">
+                        <p className="m-0 italic">
+                            There’s a post by Logan Kilpatrick that stuck with me: the world rewards audacity, not potential. And the older I get, the more true that feels. Potential is invisible. It only becomes real once you act on it
+                        </p>
+                    </div>
 
                     <div className="flex justify-center -mt-6 mb-6 not-prose">
                         <Tweet id="2020192306041594240" />

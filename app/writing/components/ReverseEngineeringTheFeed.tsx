@@ -235,7 +235,8 @@ export default function ReverseEngineeringTheFeed() {
                     <li>
                         <a href="https://github.com/xai-org/x-algorithm" target="_blank" rel="noopener noreferrer">X Algorithm</a>
                     </li>
-                </ul>            </p>
+                </ul>
+            </p>
         </div>
     );
 }

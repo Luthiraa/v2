@@ -1,6 +1,7 @@
 
 import { Tweet } from "react-tweet";
 import GeminiFigure from "./GeminiFigure";
+import Carousel from "./Carousel";
 
 export default function Reflections21() {
     return (
@@ -172,6 +173,34 @@ export default function Reflections21() {
                     <p>
                         And more than anything, I’ve learned to rely on people. Keeping a tight circle of friends and family who genuinely care, people who pull me back to earth when my head gets too loud. There have been moments where things didn’t go to plan and I started overthinking everything, and it was usually a conversation with someone close that brought clarity back. Having people who remind you who you are when you forget matters more than any framework ever could
                     </p>
+                    <p>
+                        The world is a massive place and there is so much to see and explore. This last year I got a small glimpse of it by going to SF for the first time with my brother. It reminded me how much is out there beyond the small bubble you get used to. That feeling has been sitting with me ever since. It made me want to travel more, to see things firsthand instead of just reading or watching from a distance. There’s something about stepping into unfamiliar places that expands your perspective in a way nothing else really can.
+                    </p>
+                    <p>
+                        It also made me want to get back into capturing things again. Slowing down and documenting moments, especially through photography and creating. The world is going to keep changing and evolving whether we notice it or not, but the memories we choose to hold onto don’t fade the same way. That trip felt surreal in a quiet way, like one of those snapshots that stays vivid no matter how much time passes. And it reminded me that maybe part of growing up is learning to notice those moments while you’re still inside them, and making the effort to keep them.
+                    </p>
+
+                    <p>
+                        Some moments of joy from the past 12 months 🙂
+                    </p>
+
+                    <Carousel
+                        slides={[
+                            { src: "/images/writing/21-reflections/slide-1.jpg", type: "image", alt: "Memory 1" },
+                            { src: "/images/writing/21-reflections/slide-2.jpg", type: "image", alt: "Memory 2" },
+                            { src: "/images/writing/21-reflections/slide-3.jpg", type: "image", alt: "Memory 3" },
+                            { src: "/images/writing/21-reflections/slide-4.jpg", type: "image", alt: "Memory 4" },
+                            { src: "/images/writing/21-reflections/slide-5.jpg", type: "image", alt: "Memory 5" },
+                            { src: "/images/writing/21-reflections/slide-6.jpg", type: "image", alt: "Memory 6" },
+                            { src: "/images/writing/21-reflections/slide-7.jpg", type: "image", alt: "Memory 7" }, // Converted from HEIC for browser support
+                            { src: "/images/writing/21-reflections/slide-8.jpg", type: "image", alt: "Memory 8" },
+                            { src: "/images/writing/21-reflections/slide-9.jpg", type: "image", alt: "Memory 9" },
+                            { src: "/images/writing/21-reflections/slide-10.jpg", type: "image", alt: "Memory 10" },
+                            { src: "/images/writing/21-reflections/slide-11.jpg", type: "image", alt: "Memory 11" },
+                            { src: "/images/writing/21-reflections/slide-12.jpg", type: "image", alt: "Memory 12" },
+                            { src: "/images/writing/21-reflections/slide-13.jpg", type: "image", alt: "Memory 13" },
+                        ]}
+                    />
                 </div>
             </section>
 

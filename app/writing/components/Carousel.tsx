@@ -25,18 +25,25 @@ export default function Carousel({ slides }: CarouselProps) {
 
         let animationFrameId: number;
 
+        let currentScroll = container.scrollLeft;
+
         const scroll = () => {
             if (container) {
-                // Scroll speed (pixels per frame)
-                const speed = 0.5;
+                // Scroll speed (pixels per frame). Changed to 0.75 to feel smoother on most hz.
+                const speed = 0.75;
 
-                if (container.scrollLeft >= container.scrollWidth / 2) {
-                    // Reset to start (seamless loop because of duplicated items)
-                    container.scrollLeft = 0;
-                } else {
-                    container.scrollLeft += speed;
+                // User manual scroll detection and resync
+                if (Math.abs(container.scrollLeft - Math.round(currentScroll)) > 2) {
+                    currentScroll = container.scrollLeft;
                 }
 
+                if (currentScroll >= container.scrollWidth / 2) {
+                    currentScroll = 0;
+                } else {
+                    currentScroll += speed;
+                }
+
+                container.scrollLeft = currentScroll;
                 animationFrameId = requestAnimationFrame(scroll);
             }
         };
@@ -88,7 +95,7 @@ export default function Carousel({ slides }: CarouselProps) {
                 {allSlides.map((slide, index) => (
                     <div
                         key={index}
-                        className="flex-shrink-0 relative h-[300px] w-auto aspect-[3/4] md:aspect-[4/3] rounded-xl overflow-hidden border border-white/10 shadow-lg bg-white/5 transition-transform duration-300 hover:scale-[1.02]"
+                        className="flex-shrink-0 relative h-[300px] w-auto aspect-[3/4] md:aspect-[4/3] rounded-xl overflow-hidden border border-black/10 shadow-lg bg-white/5 transition-transform duration-300 hover:scale-[1.02]"
                     >
                         {slide.type === "video" ? (
                             <video
@@ -111,7 +118,7 @@ export default function Carousel({ slides }: CarouselProps) {
             {/* Left Control */}
             <button
                 onClick={scrollLeft}
-                className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/40 text-white/80 border border-white/10 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-black/60 hover:scale-110 disabled:opacity-0"
+                className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/40 text-black/80 border border-black/10 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/60 hover:scale-110 disabled:opacity-0"
                 aria-label="Scroll left"
             >
                 <ChevronLeft size={24} />
@@ -120,15 +127,15 @@ export default function Carousel({ slides }: CarouselProps) {
             {/* Right Control */}
             <button
                 onClick={scrollRight}
-                className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/40 text-white/80 border border-white/10 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-black/60 hover:scale-110"
+                className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/40 text-black/80 border border-black/10 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/60 hover:scale-110"
                 aria-label="Scroll right"
             >
                 <ChevronRight size={24} />
             </button>
 
             {/* Gradient Masks for smooth fade effect at edges */}
-            <div className="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-black/80 to-transparent pointer-events-none opacity-0 md:opacity-100" />
-            <div className="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-black/80 to-transparent pointer-events-none opacity-0 md:opacity-100" />
+            <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-background to-transparent pointer-events-none opacity-0 md:opacity-100" />
+            <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-background to-transparent pointer-events-none opacity-0 md:opacity-100" />
         </div>
     );
 }

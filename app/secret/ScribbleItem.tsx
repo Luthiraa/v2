@@ -30,7 +30,7 @@ export default function ScribbleItem({ src, index }: { src: string; index: numbe
         <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "100px" }}
+            viewport={{ once: true, margin: "100px"}}
             transition={{ duration: 0.5, delay: index % 5 * 0.1 }}
             className="relative group cursor-pointer w-full"
         >
@@ -65,7 +65,7 @@ export default function ScribbleItem({ src, index }: { src: string; index: numbe
 
             {/* The Animated Scribble Border */}
             <div className="absolute inset-0 z-20 pointer-events-none -m-2">
-                <svg className="w-[calc(100%+1rem)] h-[calc(100%+1rem)]" viewBox="0 0 310 310" preserveAspectRatio="none">
+                <svg className="w-[calc(100%+1rem)] h-[calc(100%+1rem)]"viewBox="0 0 310 310"preserveAspectRatio="none">
                     <motion.path
                         d={path}
                         fill="none"
@@ -77,39 +77,39 @@ export default function ScribbleItem({ src, index }: { src: string; index: numbe
                         whileHover={{
                             pathLength: [0.8, 1, 0.9, 1], // Jittery animation
                             opacity: 1,
-                            strokeDasharray: "0 0" // Become solid line
+                            strokeDasharray: "0 0"// Become solid line
                         }}
-                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                        transition={{ duration: 0.5, ease: "easeInOut"}}
                     />
                 </svg>
             </div>
 
-            {/* Special 'Pet Me' Interaction for Cat Video/Image */}
+            {/* Special'Pet Me' Interaction for Cat Video/Image */}
             {(src.toLowerCase().includes("5179") || src.toLowerCase().includes("5260") || src.toLowerCase().includes("4980") || src.toLowerCase().includes("5302") || src.toLowerCase().includes("cat_curl")) && (
                 <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none block whitespace-nowrap">
                     <div className="flex flex-col items-center">
-                        <span className="font-virgil text-lg text-white drop-shadow-md bg-black/40 px-2 rounded mb-1">pet me</span>
-                        <svg width="40" height="40" viewBox="0 0 50 50" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" className="animate-bounce">
+                        <span className="text-lg text-black drop-shadow-md bg-white/40 px-2 rounded mb-1">pet me</span>
+                        <svg width="40"height="40"viewBox="0 0 50 50"fill="none"stroke="white"strokeWidth="2"strokeLinecap="round"className="animate-bounce">
                             {/* Arrow pointing UP */}
-                            <path d="M25,40 Q25,25 25,10" />
-                            <path d="M15,20 L25,10 L35,20" />
+                            <path d="M25,40 Q25,25 25,10"/>
+                            <path d="M15,20 L25,10 L35,20"/>
                         </svg>
                     </div>
                 </div>
             )}
 
-            {/* Messy "Tape" or "Scribble" Overlay randomly placed */}
+            {/* Messy "Tape"or "Scribble"Overlay randomly placed */}
             {index % 3 === 0 && (
                 <div className="absolute -top-4 -right-4 z-30 w-12 h-12 opacity-80 group-hover:animate-pulse">
-                    <svg viewBox="0 0 50 50" className="text-white w-full h-full transform rotate-12">
-                        <path d="M10,10 L40,40 M40,10 L10,40" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                    <svg viewBox="0 0 50 50"className="text-black w-full h-full transform rotate-12">
+                        <path d="M10,10 L40,40 M40,10 L10,40"stroke="currentColor"strokeWidth="2"strokeLinecap="round"/>
                     </svg>
                 </div>
             )}
 
             {/* Caption that appears on hover, looking like handwriting */}
             <div className="absolute -bottom-6 left-0 right-0 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 tracking-widest text-xs z-30">
-                <span className="bg-black px-2">fig. {index + 1} {isVideo && "(mov)"}</span>
+                <span className="bg-white px-2">fig. {index + 1} {isVideo && "(mov)"}</span>
             </div>
 
         </motion.div>

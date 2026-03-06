@@ -8,9 +8,7 @@ const config: Config = {
     theme: {
         extend: {
             fontFamily: {
-                mono: ["var(--font-roboto-mono)", "monospace"],
                 virgil: ["var(--font-virgil)", "sans-serif"],
-                georgia: ["Georgia", "Times New Roman", "Times", "serif"],
             },
             colors: {
                 background: "var(--background)",

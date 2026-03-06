@@ -59,11 +59,11 @@ const photos = [
 
 export default function Secret() {
     return (
-        <main className="min-h-screen w-full bg-black text-white p-4 md:p-8 font-virgil overflow-x-hidden selection:bg-white selection:text-black">
+        <main className="min-h-screen w-full bg-white text-black p-4 md:p-8 overflow-x-hidden selection:bg-white selection:text-black">
 
             {/* Nav */}
-            <nav className="fixed top-8 left-8 z-50 mix-blend-difference pointer-events-none">
-                <Link href="/" className="text-sm hover:underline underline-offset-4 decoration-1 opacity-50 hover:opacity-100 transition-opacity pointer-events-auto">
+            <nav className="fixed top-8 left-8 z-50 pointer-events-none">
+                <Link href="/" className="text-sm hover:underline underline-offset-4 decoration-1 opacity-50 hover:opacity-100 transition-opacity pointer-events-auto text-black">
                     ← return
                 </Link>
             </nav>
@@ -71,8 +71,8 @@ export default function Secret() {
             <div className="max-w-[1920px] mx-auto pt-24 pb-40">
                 <header className="mb-24 text-center px-4">
                     <h1 className="text-4xl md:text-6xl font-bold opacity-100 mb-4 tracking-tighter relative inline-block">
-                        <span className="relative z-10">Darkroom</span>
-                        <svg className="absolute -bottom-2 left-0 w-full h-4 text-white/50 -z-0" viewBox="0 0 100 10" preserveAspectRatio="none">
+                        <span className="relative z-10">Lightroom</span>
+                        <svg className="absolute -bottom-2 left-0 w-full h-4 text-black/50 -z-0" viewBox="0 0 100 10" preserveAspectRatio="none">
                             <path d="M0,5 Q50,10 100,5" stroke="currentColor" strokeWidth="2" fill="none" />
                         </svg>
                     </h1>

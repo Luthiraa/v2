@@ -191,22 +191,22 @@ export default function Gallery() {
     const [selectedImage, setSelectedImage] = useState<typeof galleryImages[0] | null>(null);
 
     return (
-        <main className="min-h-screen w-full bg-black text-white p-8 font-virgil">
+        <main className="min-h-screen w-full bg-white text-black p-8 ">
             <div className="max-w-4xl mx-auto w-full">
                 {/* Header */}
-                <header className="flex items-center gap-4 mb-12 text-xs text-gray-400">
-                    <Link href="/" className="hover:text-white transition-colors">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <header className="flex items-center gap-4 mb-12 text-xs text-gray-500">
+                    <Link href="/"className="hover:text-black transition-colors">
+                        <svg width="14"height="14"viewBox="0 0 24 24"fill="none"stroke="currentColor"strokeWidth="2"strokeLinecap="round"strokeLinejoin="round">
                             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                             <polyline points="9 22 9 12 15 12 15 22"></polyline>
                         </svg>
                     </Link>
                     <span>/</span>
-                    <span className="text-white">gallery</span>
+                    <span className="text-black">gallery</span>
                 </header>
 
                 <div className="text-left mb-12">
-                    <Link href="/gallery/moments" className="text-xs italic text-gray-400 hover:text-white transition-colors underline decoration-1 underline-offset-4">
+                    <Link href="/gallery/moments"className="text-xs italic text-gray-500 hover:text-black transition-colors underline decoration-1 underline-offset-4">
                         a collection of moments
                     </Link>
                 </div>
@@ -227,9 +227,9 @@ export default function Gallery() {
                                 className="w-full h-auto object-cover transition-all duration-500 group-hover:scale-105 group-hover:blur-[2px]"
                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             />
-                            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-                                <p className="text-xs font-medium text-white">{image.location}</p>
-                                <p className="text-[10px] text-gray-300">{image.date}</p>
+                            <div className="absolute inset-0 bg-white/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                                <p className="text-xs font-medium text-black">{image.location}</p>
+                                <p className="text-[10px] text-gray-700">{image.date}</p>
                             </div>
                         </div>
                     ))}
@@ -239,7 +239,7 @@ export default function Gallery() {
             {/* Lightbox */}
             {selectedImage && (
                 <div
-                    className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+                    className="fixed inset-0 bg-white/90 z-50 flex items-center justify-center p-4"
                     onClick={() => setSelectedImage(null)}
                 >
                     <div className="relative max-w-5xl w-full max-h-[90vh] flex flex-col items-center">

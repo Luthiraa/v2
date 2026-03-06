@@ -22,15 +22,15 @@ export default function Home() {
     }, [clickCount, router]);
 
     return (
-        <main className="h-screen w-full flex flex-col items-center justify-center p-4 text-center max-w-[500px] mx-auto space-y-6 text-xs overflow-hidden">
+        <main className="h-screen w-full flex flex-col items-center justify-center p-4 text-center max-w-[500px] mx-auto space-y-5 text-xs overflow-hidden">
 
 
             {/* Header */}
-            <header className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-wide font-virgil">Luthira Abeykoon</h1>
-                <div className="text-gray-400 font-virgil">
+            <header className="space-y-1.5">
+                <h1 className="text-[26px] font-bold tracking-tight text-gray-900">Luthira Abeykoon</h1>
+                <div className="text-gray-500 ">
                     <span>Contact intercept • </span>
-                    <a href="mailto:luthira.abeykoon@gmail.com" className="underline decoration-1 underline-offset-4 hover:text-white transition-colors">
+                    <a href="mailto:luthira.abeykoon@gmail.com" className="underline decoration-1 underline-offset-4 hover:text-black transition-colors">
                         luthira.abeykoon@gmail.com
                     </a>
                 </div>
@@ -39,37 +39,36 @@ export default function Home() {
             {/* Action Button */}
             <div>
                 <Link href="/gallery">
-                    <button className="border border-white/80 px-4 py-1.5 hover:bg-white hover:text-black transition-all duration-300 ease-in-out text-xs font-virgil">
+                    <button className="border border-black/50 px-4 py-1.5 hover:bg-white hover:text-black transition-all duration-300 ease-in-out text-xs ">
                         Accelerate TFLOPs
                     </button>
                 </Link>
             </div>
 
             {/* Bio Section */}
-            <section className="space-y-4 text-left w-full leading-relaxed max-w-[400px] mx-auto tracking-wide text-gray-200 font-virgil text-sm">
+            <section className="space-y-3.5 text-left w-full leading-relaxed max-w-[400px] mx-auto tracking-wide text-gray-800 text-[14px]">
                 <p>
-                    I <Link href="/projects" className="underline decoration-1 underline-offset-4 hover:text-gray-300">make</Link> things, break things, and <Link href="/work" className="underline decoration-1 underline-offset-4 hover:text-gray-300">ship</Link> fast.
+                    I collect phases.
                 </p>
-
                 <p>
-                    I like building things end to end, from the idea stage to something real people can try.
+                    A lot of them begin as “it would be funny if this worked.”
                 </p>
-
-                {/* <p>
-                    I work across hardware, software, and AI. I’ve built tools, sites, and systems that solve problems I care about, and I’m always looking for the next thing to make.
-                </p> */}
-
                 <p>
-                    Recently, I’ve been using writing to think more clearly and reflect. You can read some of that <Link href="/writing" className="underline decoration-1 underline-offset-4 hover:text-gray-300">here</Link>.
+                    Some become <Link href="/projects" className="underline decoration-1 underline-offset-4 hover:text-gray-600">projects</Link>. Some become <Link href="/writing" className="underline decoration-1 underline-offset-4 hover:text-gray-600">writing</Link>. Some fail in useful ways and return later with a different face.
+                </p>
+                <p>
+                    I’ve come to think that a life is partly just this: a sequence of obsessions, each leaving behind a different version of you than the one that entered.
+                </p>
+                <p>
+                    This site is part archive, part notebook, part proof of contact.
                 </p>
             </section>
 
-            {/* Links Section */}
-            {/* Links Section */}
-            <footer className="w-full pt-0 -mt-6 pb-8 flex flex-col items-center font-virgil relative z-10">
+            {/* Footer */}
+            <footer className="w-full pt-0 -mt-2 pb-8 flex flex-col items-center relative z-10">
 
                 <div
-                    className="relative w-16 h-16 mb-12 group cursor-pointer"
+                    className="relative w-14 h-14 mb-8 group cursor-pointer"
                     onClick={() => setClickCount(c => c + 1)}
                 >
                     {/* Static Image */}
@@ -78,7 +77,7 @@ export default function Home() {
                         alt="Cat"
                         width={64}
                         height={64}
-                        className="absolute inset-0 w-full h-full object-contain invert opacity-100 group-hover:opacity-0 transition-opacity duration-200"
+                        className="absolute inset-0 w-full h-full object-contain opacity-100 group-hover:opacity-0 transition-opacity duration-200"
                     />
                     {/* Animated GIF */}
                     <Image
@@ -86,7 +85,7 @@ export default function Home() {
                         alt="Cat Animated"
                         width={64}
                         height={64}
-                        className="absolute inset-0 w-full h-full object-contain invert opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                        className="absolute inset-0 w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-200"
                         unoptimized
                     />
                     {/* Pet me arrow - positioned absolutely relative to the cat container */}
@@ -103,7 +102,7 @@ export default function Home() {
 
                     {/* GitHub */}
                     <div className="relative group flex flex-col items-center">
-                        <Link href="https://github.com/Luthiraa" target="_blank" className="block underline decoration-1 underline-offset-4 hover:text-gray-300 relative z-10 whitespace-nowrap">
+                        <Link href="https://github.com/Luthiraa" target="_blank" className="block underline decoration-1 underline-offset-4 hover:text-gray-600 relative z-10 whitespace-nowrap">
                             GitHub
                         </Link>
                         <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-40 flex flex-col items-center pointer-events-none">
@@ -112,14 +111,14 @@ export default function Home() {
                                     <path d="M15 35 C 20 25, 25 15, 25 2" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
                                     <path d="M25 2 L 22 8 M 25 2 L 29 8" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
-                                <p className="absolute left-[10px] top-[25px] text-gray-500 text-[10px] -ml-4 whitespace-nowrap">life monorepository</p>
+                                <p className="absolute left-[10px] top-[25px] text-gray-500 text-[10px] font-virgil -ml-4 whitespace-nowrap">life monorepository</p>
                             </div>
                         </div>
                     </div>
 
                     {/* X */}
                     <div className="relative group flex flex-col items-center">
-                        <Link href="https://x.com/luthiraabeykoon" target="_blank" className="block underline decoration-1 underline-offset-4 hover:text-gray-300 relative z-10 whitespace-nowrap">
+                        <Link href="https://x.com/luthiraabeykoon" target="_blank" className="block underline decoration-1 underline-offset-4 hover:text-gray-600 relative z-10 whitespace-nowrap">
                             X [dot] com
                         </Link>
                         <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-40 flex flex-col items-center pointer-events-none">
@@ -127,13 +126,13 @@ export default function Home() {
                                 <path d="M10 28 C 10 20, 10 10, 10 2" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
                                 <path d="M10 2 L 7 7 M 10 2 L 13 7" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
-                            <p className="text-gray-500 text-[10px] leading-tight text-center w-full">updates, builds, whatever i’m thinking about that day</p>
+                            <p className="text-gray-500 text-[10px] font-virgil leading-tight text-center w-full">updates, builds, whatever i’m thinking about that day</p>
                         </div>
                     </div>
 
                     {/* LinkedIn */}
                     <div className="relative group flex flex-col items-center">
-                        <Link href="https://www.linkedin.com/in/luthiraa/" target="_blank" className="block underline decoration-1 underline-offset-4 hover:text-gray-300 relative z-10 whitespace-nowrap">
+                        <Link href="https://www.linkedin.com/in/luthiraa/" target="_blank" className="block underline decoration-1 underline-offset-4 hover:text-gray-600 relative z-10 whitespace-nowrap">
                             LinkedIn
                         </Link>
                         <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-40 flex flex-col items-center pointer-events-none">
@@ -142,15 +141,15 @@ export default function Home() {
                                     <path d="M35 35 C 30 25, 25 15, 25 2" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
                                     <path d="M25 2 L 22 8 M 25 2 L 28 8" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
-                                <p className="absolute right-[10px] top-[25px] text-gray-500 text-[10px] -mr-4 whitespace-nowrap">(public archive)</p>
+                                <p className="absolute right-[10px] top-[25px] text-gray-500 text-[10px] font-virgil -mr-4 whitespace-nowrap">(public archive)</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div className="pb-0.5 mt-28">
+                {/* <div className="pb-0.5 mt-28">
                     <p className="text-gray-600 italic text-sm whitespace-nowrap">~imagination is limitless~</p>
-                </div>
+                </div> */}
 
             </footer>
         </main>

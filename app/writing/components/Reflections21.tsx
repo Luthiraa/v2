@@ -8,7 +8,7 @@ export default function Reflections21() {
         <div className="space-y-16">
             {/* Section 1 */}
             <section className="space-y-6">
-                <div className="text-base text-white/85 font-sans leading-8 tracking-tight space-y-7 [text-wrap:pretty]">
+                <div className="text-base text-black/85 font-sans leading-8 tracking-tight space-y-7 [text-wrap:pretty]">
                     <p>
                         21… wow it doesnt even feel real to say. If I were to tell myself at the beginning of high school that I would be where I am today I would think it was some delutional lucid dream. Which makes me think, is it better to be delusional and aim for the stars, because if you miss you’ll end up on the moon, or is “delusion” just what belief looks like before the world catches up? Maybe the difference between delusion and vision is just time and persistence.
                     </p>
@@ -39,11 +39,11 @@ export default function Reflections21() {
                 </div>
             </section>
 
-            <hr className="border-white/10" />
+            <hr className="border-black/10" />
 
             {/* Section 2 */}
             <section className="space-y-6">
-                <div className="text-base text-white/85 font-sans leading-8 tracking-tight space-y-7 [text-wrap:pretty]">
+                <div className="text-base text-black/85 font-sans leading-8 tracking-tight space-y-7 [text-wrap:pretty]">
                     <p>
                         I’m very proud of what I’ve achieved so far, and it’s honestly been a crazy speedrun over the past year.
                     </p>
@@ -107,11 +107,11 @@ export default function Reflections21() {
                 </div>
             </section>
 
-            <hr className="border-white/10" />
+            <hr className="border-black/10" />
 
             {/* Section 3 */}
             <section className="space-y-6">
-                <div className="text-base text-white/85 font-sans leading-8 tracking-tight space-y-7 [text-wrap:pretty]">
+                <div className="text-base text-black/85 font-sans leading-8 tracking-tight space-y-7 [text-wrap:pretty]">
                     <p>
                         I think this feeling is canon for a lot of people in their 20s, the feeling of being lost, especially when it comes down to what you want to do in the future. Being brutally honest, this feeling hit me like a truck. The uncertainty wasn’t loud, it was constant. It kept nudging me in the background like something I couldn’t shake off. It was more than just not knowing what the future held, it was not knowing what my purpose was, or even what actually makes me happy.
                     </p>
@@ -160,7 +160,7 @@ export default function Reflections21() {
                         Another shift has been saying yes more. Not blindly, but leaning toward action instead of hesitation. A lot of the best things in my life came from moments where I could’ve easily said no. Sending the message. Showing up to the thing alone. Starting projects before I felt ready. Most opportunities don’t arrive polished, they show up messy and uncertain. Taking more swings just increases the chances that something unexpected works.
                     </p>
 
-                    <div className="bg-white/5 border border-white/10 rounded-2xl p-6 my-8">
+                    <div className="bg-white/5 border border-black/10 rounded-2xl p-6 my-8">
                         <p className="m-0 italic">
                             There’s a post by Logan Kilpatrick that stuck with me: the world rewards audacity, not potential. And the older I get, the more true that feels. Potential is invisible. It only becomes real once you act on it
                         </p>
@@ -204,11 +204,11 @@ export default function Reflections21() {
                 </div>
             </section>
 
-            <hr className="border-white/10" />
+            <hr className="border-black/10" />
 
             {/* Section 4 */}
             <section className="space-y-6">
-                <div className="text-base text-white/85 font-sans leading-8 tracking-tight space-y-7 [text-wrap:pretty]">
+                <div className="text-base text-black/85 font-sans leading-8 tracking-tight space-y-7 [text-wrap:pretty]">
                     <p>
                         I dont know what the future holds yet, but this next section is for my future self in 1 year and 10 years respectively.
                     </p>

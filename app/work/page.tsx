@@ -47,22 +47,22 @@ const workExperience = [
 
 export default function Work() {
     return (
-        <main className="min-h-screen w-full bg-black text-white p-8 font-virgil flex flex-col items-center">
+        <main className="min-h-screen w-full bg-white text-black p-8 flex flex-col items-center">
             <div className="max-w-[500px] w-full">
                 {/* Header */}
-                <header className="flex items-center gap-4 mb-12 text-xs text-gray-400">
-                    <Link href="/" className="hover:text-white transition-colors">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <header className="flex items-center gap-4 mb-12 text-xs text-gray-500">
+                    <Link href="/"className="hover:text-black transition-colors">
+                        <svg width="14"height="14"viewBox="0 0 24 24"fill="none"stroke="currentColor"strokeWidth="2"strokeLinecap="round"strokeLinejoin="round">
                             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                             <polyline points="9 22 9 12 15 12 15 22"></polyline>
                         </svg>
                     </Link>
                     <span>/</span>
-                    <span className="text-white">work</span>
+                    <span className="text-black">work</span>
                 </header>
 
                 <div className="text-left mb-12">
-                    <p className="text-xs italic text-gray-400">places i've worked</p>
+                    <p className="text-xs italic text-gray-500">places i've worked</p>
                 </div>
 
                 {/* Work List */}
@@ -73,13 +73,13 @@ export default function Work() {
                                 <Link
                                     href={job.href}
                                     target="_blank"
-                                    className="text-sm font-medium hover:text-gray-300 underline decoration-1 underline-offset-4 transition-colors"
+                                    className="text-sm font-medium hover:text-gray-600 underline decoration-1 underline-offset-4 transition-colors"
                                 >
                                     {job.company}
                                 </Link>
                                 <span className="text-[10px] text-gray-500">{job.date}</span>
                             </div>
-                            <p className="text-xs text-gray-400">{job.role}</p>
+                            <p className="text-xs text-gray-500">{job.role}</p>
                             <p className="text-xs text-gray-500 leading-relaxed pt-1">
                                 {job.description}
                             </p>

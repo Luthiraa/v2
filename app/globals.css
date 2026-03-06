@@ -11,13 +11,16 @@
 }
 
 :root {
-  --background: #000000;
-  --foreground: #ffffff;
+  --background: #f4f4f4;
+  --foreground: #171717;
   --font-virgil: 'Virgil', sans-serif;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }

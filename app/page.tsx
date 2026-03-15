@@ -77,7 +77,7 @@ export default function Home() {
                         alt="Cat"
                         width={64}
                         height={64}
-                        className="absolute inset-0 w-full h-full object-contain opacity-100 group-hover:opacity-0 transition-opacity duration-200"
+                        className="absolute inset-0 w-full h-full object-contain opacity-100 group-hover:opacity-0 transition-opacity duration-200 invert"
                     />
                     {/* Animated GIF */}
                     <Image
@@ -85,7 +85,7 @@ export default function Home() {
                         alt="Cat Animated"
                         width={64}
                         height={64}
-                        className="absolute inset-0 w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                        className="absolute inset-0 w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-200 invert"
                         unoptimized
                     />
                     {/* Pet me arrow - positioned absolutely relative to the cat container */}
